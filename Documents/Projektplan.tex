@@ -1,0 +1,488 @@
+\documentclass{TDP003mall}
+\usepackage[utf8]{inputenc}
+\usepackage[swedish]{babel}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{makecell}
+
+
+% Färgkoda skiten //Daniel
+
+\newcommand{\version}{Version 1.1}
+\author{Daniel Huber, \url{danhu849@liu.se}\\
+  Jens Öhrnell, \url{jenoh242@liu.se}}
+\title{Projektplan}
+\date{2020-09-29}
+\rhead{Daniel Huber\\
+Jens Öhrnell}
+
+\renewcommand*\contentsname{Innehållsförteckning}
+\setlist{topsep=0pt, leftmargin=*}
+
+\begin{document}
+\projectpage
+
+\tableofcontents
+
+\newpage
+\section{Revisionshistorik}
+\begin{table}[!h]
+  \caption{Projektplanens Revisionshistorik\label{tab:1}}
+\begin{tabularx}{\linewidth}{|l|X|l|}
+\hline
+  Ver. & Revisionsbeskrivning & Datum \\\hline
+  1.1 & Korrigerat Projektplanens kompletteringar & 290920 \\\hline
+  1.0 & Projektplan 1:a Utkast & 240920 \\\hline
+\end{tabularx}
+\end{table}
+
+
+\section{Introduktion}
+Projektets mål utgörs av att skapa, presentera och underhålla en webbaserad portfolio. Där presenteras de projekt som ska, i och utanför universitetet, färdigställas under de kommande 3 åren. Den kompletta kravspecifikationen skrevs av programledningen och återfinns i dokumentet \textit{Systemspecifikation av portfoliosystemet}. En sammanfattning finns i detta dokument.
+
+För de avsnitt där det antingen är vagt eller inte alls specificerat vad eller hur något ska göras förväntas det av studenten att egna initiativ tas. Exempel på detta är utseendet på användargränssnittet där nästintill total frihet ges.
+
+\section{Tekniker}
+Enligt projektets kravspecifikation används följande tekniker:
+\begin{itemize}
+\item Python3
+\item Git
+\item HTML5
+\item CSS3
+\item Flask
+\item Jinja2
+\item venv
+\item JSON
+\item Latex
+\end{itemize}
+
+Pythonpaketet venv används för att möjlggöra utveckling i virtuell miljö samt minimera risken av paketkonflikter.
+I pythonpaketet Flask tillhandahålls debugger, möjlighet att binda python3 funktioner till URL paths (API) och webbserver.
+Pythonpaketet Jinja2 används för HMTL5 och CSS3 templates.
+Versionshantering sköts med git.
+Datalagret representeras av en JSON fil, data.json.
+Dokumentationen skrivs i Latex.
+
+\newpage
+
+\section{Arbetsmetodik}
+Arbetsuppgifter skrivs upp i repot som issues och tas an kontinuerligt. Vid det tillfälle då någon arbetsuppgift avklarats senare under veckan meddelas detta till resten av arbetsgruppen. I de fall där det inte finns fler issues att ta av, diskuteras nya fram med resten av gruppen.
+
+För de kunskapsområden som är vaga inhämtas först information ett par dagar innan ämnet först berörs i skolan. Sedan sammanställs kravspecifikationen för den specifika aktiviteten. För kod färdigställs en tutorial hittad online av liknande storlek som aktiviteten innan aktiviteten påbörjas.
+
+Under arbetets gång push:as arbetet kontinuerligt till projektets git-repo. Åtminstone en gång i halvtimmen eftersträvas. Aktiviteter och delmål arbetas på och avklaras huvudsakligen individuellt. Större aktiviteter kan delas upp till mindre, men det diskuteras i arbetslaget om så är nödvändigt först och skrivs upp i issues. Vid varje avklarad aktivitet kontrolleras den fullbordade aktiviteten mot kravspecifikationen och kompletteras om nödvändigt. Dagbok skrivs enskilt efter arbetsinsats av en aktivitet. Projektplanen underhålls lättare om dagboken är detaljrik.
+
+Sms och eller mejl skickas till berörd vid påbörjan och avslut av arbete på aktiviteter då merge konflikter och onödigt dubbelarbete minimeras. Icke-akuta frågor ställs via mejl eller sms. Vid icke lösbara problem eller missförstånd kontaktas resten av arbetslaget så snart det är möjligt via telefonsamtal.
+
+\section{Kravspecifikation}
+Projektet utgörs av två delar. Dels det slutanvändaren kan se, det presentativa,
+och dels det som denne inte kan se, datalagringen och datahämtningen.
+
+Av webplatsen krävs det att den utrustas med fyra html-sidor skrivna i HTML5 och
+ CSS3. En huvudsida/första sida som antingen kan vara statiskt eller dynamisk samt
+ 3 stycken dynamiska sidor. De tre sistnämnda utgörs av en söksida, en projektsida
+ och en tekniksida. Krav finns att det på huvudsidan visas bilder. På söksidan kan
+ projekt sorteras efter projektens id samt efter bokstavsordning och ålder med hjälp av knappar.
+ På respektive projektsida visas fullständig information om det specifika
+ projektet tillsammans med större passande bilder. Om projektet inte finns visas
+ relevant felkod status 404 'This page does not exist'. På tekniksidan visas
+ information om projekten utifrån vilka tekniker som använts. Ett ambitionsmål är
+ att kunna visa i hur stor omfattning teknikerna använts i projekten. Varje projekt
+ ska i listningar på söksidan och tekniksidan visas med en liten bild bredvid sig
+. Bildtext måste finnas till varje bild. Vid fel ska dessa hanteras på ett, för 
+slutanvändaren, informativt sätt så att denne kan förstå vad som gått fel.
+
+Datalagret utgörs av JSON-kod med UTF-8 teckenkodning i JSON-filen data.json. Varje
+ projektinstans i JSON-koden utgörs av projektnamn, projekt-id i form av ett unikt
+ heltalsnummer, startdatum, slutdatum, kurskod, kursnamn, kurspoäng, nyttjade tekniker
+, sammanfattning, full beskrivning, liten och stor bild, antal gruppmedlemmar och
+ länk till projektsida. JSON-koden manipuleras med hjälp av ett API utgörande av
+ sex stycken standardiserade funktioner. Samtliga namn skrivs på engelska. Funktioner
+ som ska implementeras: load(filename), get\_project\_count(db), get\_project(db
+, id), search(db, sort\_by='start date', sort\_order='desc', techniques=None, search
+=None), get\_techniques(db), get\_technique\_stats(db). För fullständig specifikation
+ hänvisas läsaren till dokumentet \textit{Application Programming Interface (API
+)} som finns på kurshemsidan.
+
+Vid sökning av godtyckliga termer om projektets information genereras träffar och
+ slutanvändaren presenteras med en lista där det mest förmodade objektet presenteras
+ högst upp eller längst ner. Tekniksidan kan sorteras på använda tekniker. Det ska
+ noteras att funktionaliteten ska möjliggöra sökning på ett ord, sortering och filtrering
+ av tekniker. Sökningarna ska ske samtidigt. Datum är i formatet ISO 8601. Förändringar
+ i data.json filen ska för användaren presenteras direkt utan nödvändig omstart av
+ webbservern. En frivillighet och alltså inte ett krav är att lägga till en administrativ
+ sida för redigering av data.
+
+Projektet versionshanteras med git.
+
+Vid systemets slutförande testas systemets funktioner av två personer som ej ingått i utvecklarteamet.
+Systemtesten och uppkomna fel dokumenteras och ska vara åtgärdade i den slutgiltiga versionen av projektet.
+Testerna skrivs sedan in i systemdokumentationen.
+
+\section{Riskbedömning och åtgärder}
+Den största risken mot att inte bli klar i tid är sjukdom som redan drabbat en del av teamet en gång när detta skrivs (23/9). Det löstes av att den andra teammedlemmen fick skynda sig att göra klart arbetet innan deadline. Till hjälp finns betyget med beröm för tidigare inlämningar. I värsta fall kan inlämning ske efter deadline så länge detta kommuniceras till handledare innan. Ambitionen är dock att detta aldrig nyttjas.
+
+Familjemedlemmar till arbetslaget har instruerats att kontakta handledare vid skador, sjukdomar eller andra traumatiska händelser av allvarlig sort. Detta för att resurser från universitetet i den mån det är möjligt kan tillsättas tidigt.
+
+Beroende på tidsåtgången att inhämta ny kunskap kan nya flaskhalsar uppstå längre bort i tiden av saker som inte kunnat förutses då kunskap saknats. Ambitionsmål att läsa om och testa tekniker en eller två veckor innan de introduceras första gången har satts. Dessa har dock lägre prioritering än det som måste göras innan nästa deadline, men finns som en påminnelse att om tid finns så kan de användas till att underlätta framtida deadlines.
+
+Slutligen finns risken att bli upptagen eller fastna med andra uppgifter i andra kurser. I denna projektplan täcks bara saker som måste göras för detta projekt. Risk finns att för stort fokus läggs på detta projekt så att andra kurser försenas. Åtgärder har satts in mot detta genom att möte kring personlig tidsdisponering hålls minst en gång i veckan. Översikt ges lättare om vem som kan göra vad när.
+
+\section{Tidsplanering vecka för vecka}
+Projektplanen uppdelas i veckor för lättare översikt. För varje vecka presenteras
+ en mer specificerad uppskattning av tidsåtgång för aktiviteter som behöver färdigställas innan deadline. Tidsåtgången för deadlinen inkluderar också tiden för dess
+ aktiviteter. För de aktiviteter som avklarats visas också den verkliga tidsåtgången
+ samt datum för färdigställande. Varje veckas deadlines och milstolpar presenteras
+ i tabeller. Ifall det saknas deadlines för någon vecka så saknas också tabell. Observera att med tidsåtgång så menas den sammanlagda tiden samtliga projektmedlemmar lagt ner tillsammans.
+
+ Aktiviteter fördelades ut över veckor. I texten markeras aktiviteters uppskattade tid i rött och dess verkliga tid i grönt för de aktiviteter där både uppskattad tid och verklig tid finns. Specifik dag och tid för aktiviteter fastställdes ej i projektplanen då dygnsrytmen för projektgruppens medlemmar skiljs åt stort. Deadlines respekteras och god kvalitet på arbete garanteras. Detta har bevisats genom tidigare inlämnade dokument.
+
+\newpage
+ 
+ \subsection*{Vecka 37 - Planeringsdokument}
+ \addcontentsline{toc}{subsection}{Vecka 37 - Planeringsdokument}
+
+ \begin{table}[h!]
+   \caption{Tabell över deadlines V.37\label{tab:2}}
+   \begin{tabularx}{\linewidth}{|l|l|X|l|l|l|l|}
+  \hline
+  Datum     & Typ           & Beskrivning        & Uppskattad tid & Tidsåtgång & Kännedom & Prio \\ [0.5ex]
+  \hline                                             
+  Tors 10/9 & Hård deadline & Planeringsdokument & 6 tim          & 7 tim      & God      & 1    \\
+  \hline
+   \end{tabularx}   
+\end{table}
+
+Tidsåtgången för planeringsdokumentet utgjordes av 7 timmar. Se tabell: \ref{tab:2}. Av dessa ägnades:
+\begin{itemize}
+  \item Tisdag 8/9:
+  \begin{itemize}
+    \item 3 tim Innehåll för planeringsdokument sammanställdes.
+    \item 2 tim Planeringsdokumentet skrevs.
+  \end{itemize}
+  \item Onsdag 9/9:
+  \begin{itemize}
+    \item 30 min åt att figurera ut hur latex dokumentet kompileras.
+    \item 1 tim att ta reda på hur en git \texttt{-{}-}hard-reset reverseras.
+    \item 30 min att figurera ut hur tabeller skrivs i latex och få dem att positioneras rätt i texten.\\
+  \end{itemize}
+      \end{itemize}
+
+      Ambitionsmål för veckan:
+      \begin{itemize}
+      \item Att planeringsdokumentet färdigställs en dag innan deadline. - Planeringsdokumentet färdigställdes den 9/9.
+      \item Förståelse för relationen mellan Flask, Python3 och Jinja2 uppnås. - I och med att planeringsdokumentet lämnades in tidigare lades Torsdagen 10/9 på flask tutorials.
+      \end{itemize}
+      
+
+\newpage
+
+\subsection*{Vecka 38 - Installationsmanual och LOFI}
+\addcontentsline{toc}{subsection}{Vecka 38 - Installationsmanual och LOFI}
+\begin{table}[h!]
+  \caption{Tabell över deadlines V.38\label{tab:3}}
+\begin{tabularx}{\linewidth}{|l|l|l|l|l|l|l|}
+  \hline
+  Datum     & Typ           & Beskrivning                                        & Uppskattad tid & Tidsåtgång    & Kännedom & Prio\\
+  \hline                                                    
+  Tors 17/9 & Hård deadline & \makecell[tl]{Grundläggande \\Installationsmanual} & 4 tim          & 9 tim 15 min  & God      & 1\\
+  \hline                                                    
+            & Hård deadline & Lofi-prototyp                                      & 6 tim          & 12 tim 29 min & God      & 1\\
+  \hline
+\end{tabularx}  
+  \end{table}
+
+Den Grundläggande installationsmanualen färdigställdes på 9 tim och 5 min. Se tabell: \ref{tab:3}
+\begin{itemize}
+  \item Måndag 14/9:
+  \begin{itemize}
+    \item 1 tim 40 min Dokumentet skrevs.
+    \item 20 min Bash-script som tog bort onödiga latex filer skrevs.
+    \item 2 tim Förståelse uppnåddes gällande hur .tex dokument innehållandes bilder kompileras.
+  \end{itemize}
+  \item Tisdag 15/9:
+  \begin{itemize}
+    \item 4 tim Dokumentet skrevs.
+    \item 1 tim Förståelse uppnåddes gällande kommandon för kontroll av lyckad installation.
+    \item 15 min Dokumentet rättades och bildernas plats justerades.
+  \end{itemize}
+\end{itemize}
+
+Lofi-prototypen färdigställdes på 12 tim och 29 min. Se tabell: \ref{tab:3}
+\begin{itemize}
+  \item Tisdag 15/9:
+  \begin{itemize}
+    \item 1 tim HTML för förstasidan skrevs.
+    \item 4 tim CSS för förstasidan skrevs.
+  \end{itemize}
+  \item Onsdag 16/9:
+  \begin{itemize}
+    \item 2 tim Utkast för samtliga sidor snabbskissades.
+    \item 3 tim Skisserna renskrevs för hand med linjal.
+  \end{itemize}
+  \item Torsdag 17/9:
+  \begin{itemize}
+    \item 2 tim 9 min De renskrivna skisserna scannades in och sammanställdes med förklaringar i ett latex dokument.
+    \item 20 min Dokumentet rättades och bildernas plats justerades.
+  \end{itemize}
+\end{itemize}
+
+
+Ambitionsmål för veckan:
+\begin{itemize}
+  \item LOFI-prototypen presenteras i HTML5 och CSS3 format. - På grund av sjukdom färdigställdes bara förstasidan.
+  \end{itemize}
+  
+
+\newpage
+
+  
+\subsection*{Vecka 39 - Projektplan och Gemensam Installationsmanual}
+\addcontentsline{toc}{subsection}{Vecka 39 - Projektplan och Gem. Installationsmanual}
+\begin{table}[h!]
+  \caption{Tabell över deadlines samt första milstolpen V.39\label{tab:4}}
+\begin{tabularx}{\linewidth}{|l|l|X|l|l|l|l|}
+  \hline
+  Datum     & Typ           & Beskrivning                                                 & Uppskattad tid & Tidsåtgång    & Kännedom & Prio \\ [0.5ex]
+  \hline                                     
+  Tors 24/9 & Hård deadline & \makecell[tl]{1:a Version\\ Gemensam \\Installationsmanual} & 24 tim         & 9 tim 41 min       & God      & 1\\
+  \hline                                     
+            & Hård deadline & \makecell[tl]{Projektplan: \\Första utkast}                 & 24 tim         & 22 tim 30 min & God      & 1 \\
+  \hline
+  Sön 27/9  & Milstolpe     & \makecell[tl]{Kunna ta det lugnt \\ under helgerna.}                            &                &               &          & \\
+  \hline
+\end{tabularx}
+  \end{table}
+  
+Egna insatser 1:a Versionen Gemensam installationsmanual färdigställdes på 9 timmar och 40 minuter. Se tabell: \ref{tab:4}
+\begin{itemize}
+  \item Måndag 21/9:
+  \begin{itemize}
+    \item 20 min Skapa branch från master för development.
+    \item 5  tim 31 min Branch repo från master skapades. READMEs skrevs i markdown i både hemkatalagen och manuals katalogen. Lättförståelig katalogstruktur gjordes i ordning. Initiella svårigheter att push:a upp filer felsöktes.
+  \end{itemize}
+  \item Tisdag 22/9:
+  \begin{itemize}
+                \item 3 tim Flertalet issues för att få igång arbetet skapades. Felsökning av andras problem gjordes.
+        \end{itemize}
+        \item Onsdag 23/9:
+        \begin{itemize}
+                \item 50 min Inledningen kompletterades och andras merge konflikter löstes.
+  \end{itemize}
+\end{itemize}
+
+  Projektplan 1:a utkast färdigställdes på 20 timmar 30 minuter. Se tabell: \ref{tab:4}:
+\begin{itemize}
+  \item Torsdag 17/9:
+  \begin{itemize}
+    \item 1 tim Minst 2-3 aktiviteter definierades inför varje deadline.
+  \end{itemize}
+  \item Tisdag 22/9:
+  \begin{itemize}
+    \item 4 tim Aktiviteterna för varje deadline skrevs in. Projektplanens upplägg bestämdes.
+  \end{itemize}
+  \item Onsdag 23/9:
+  \begin{itemize}
+    \item 2 tim Anteckningar renskrevs och sorterades in i projektplanen.
+    \item 5 tim 30 min Tabeller och listor reformaterades.
+    \item 30 min Ytterligare information om tidsåtgång lades till.
+    \item 2 tim Riskbedömning och åtgärder skrevs in i projektplanen.
+  \end{itemize}
+  \item Torsdag 24/9:
+  \begin{itemize}
+    \item 2 tim Tabeller formaterades om. Information om prioritering lades till.
+    \item 2 tim Ambitionsmål bestämdes och adderades till respektive vecka.
+     \item 2 tim Strukturen rättades till och presentationslagret skrevs in under V.41. Datalagret i V.40.
+    \item 1 tim Oegentligheter i tabeller rättades till med paketet makecell och tydligare rubriker skrevs.
+    \item 1 tim Milstolpar skrevs in och rubriker formaterades om så att dess nummer inte skrevs ut i dokumentet.
+  \end{itemize}
+\end{itemize}
+
+Ambitionsmål för veckan:
+\begin{itemize}
+\item Gemensam Installationsmanual färdigställdes.
+  \item 1 tim Projektplanens struktur omgjordes till att bli mer estetiskt tilltalande.
+  \end{itemize}
+
+\newpage
+
+\subsection*{Vecka 40 - Datalagret och Korrigeringar}
+\addcontentsline{toc}{subsection}{Vecka 40 - Datalagret och Korrigeringar}
+\begin{table}[h!]
+     \caption{Tabell över deadlines samt andra milstolpen V.40\label{tab:5}}  
+\begin{tabularx}{\linewidth}{|l|l|X|l|l|l|l|}
+  \hline
+  Datum     & Typ           & Beskrivning                                                                                        & Uppskattad tid & Tidsåtgång                        & Kännedom & Prio \\ [0.5ex]
+  \hline                                                      
+  Tors 1/10 & Hård deadline & \makecell[tl]{Bidra med icke-trivial \\förbättring: gem. \\installationsmanual/\\databas tester} & 1h             &                                   & God      & 2\\
+  \hline                                                      
+            & Hård deadline & \makecell[tl]{Korrigera brister: \\installationsmanualen}                                          & 0-2 tim        &                                   & God      & 3 \\
+  \hline                                                      
+            & Hård deadline & \makecell[tl]{Korrigera Brister: \\Projektplanen}                                                  & 0-2 tim        & \makecell[tl]{6 tim \\ 13 min ht} & God      & 2\\
+  \hline
+  Fre 2/10  & Hård deadline & Datalagret Godkänt                                                                                 & 11 tim         & 6 tim 10 min                      & God      & 1\\
+  \hline
+  Sön 4/10  & Milstolpe     & \makecell[tl]{Kunna sätta in och\\ ta bort projekt \\ mha API}                                        &                &                                   &          & \\
+  \hline
+\end{tabularx}   
+    \end{table}
+    
+Bidra med icke-trivial förbättring - installationsmanual. Se tabell: \ref{tab:4}
+\begin{itemize}
+\item Tisdag 22/9:
+  \begin{itemize}
+  \item 9 tim 41 min Branch av master och issues skapades, instruktioner skrevs i markdown i README:s, inledning kompletterades.
+  \end{itemize}
+  \end{itemize}
+
+Datalagret Godkänt på 6 timmar och 10 minuter. Se tabell: \ref{tab:5}
+\begin{itemize}
+\item \colorbox{red}{2 tim} I \colorbox{green}{20 min} load funktionen implementerades.
+\item \colorbox{red}{1 tim} I \colorbox{green}{30 min} get\_project\_count funktionen implementerades.
+\item \colorbox{red}{1 tim} I \colorbox{green}{30 min} get\_project funktionen implementerades.
+\item \colorbox{red}{3 tim} I \colorbox{green}{2 tim 40 min} search funktionen implementerades.
+\item \colorbox{red}{2 tim} I \colorbox{green}{1 tim 10 min} get\_techniques funktionen implementerades.
+\item \colorbox{red}{2 tim} I \colorbox{green}{1 tim 20 min} get\_technique\_stats funktionen implementerades.
+\end{itemize}
+
+Brister i Projektplanen korrigerades på 6 timmar och 13 minuter. Se tabell: \ref{tab:5}
+\begin{itemize}
+  \item Måndag 28/9:
+  \begin{itemize}
+  \item 1 tim 23 min Stycket om Arbetsmetodik skrevs till i projektplanen.
+  \end{itemize}
+  \item Tisdag 29/9:
+  \begin{itemize}
+\item 1 tim 43 min Projektplanens tempus skrevs om till passiv form.
+\item 2 tim 52 min Referenser till tabeller lades till och korrigerades.
+\item 15 min Milstolpar ändrades.
+  \item 30 min Datalagrets verkliga tid lades till. Se tabell: \ref{tab:5}
+  \end{itemize}
+  \end{itemize}
+
+Ambitionsmål för veckan:
+\begin{itemize}
+\item 1 tim Information om implementationen för en sqlite3 databas inhämtades för senare uppgradering av portfolions back-end.
+  \end{itemize}
+
+
+  
+  \subsection*{Vecka 41 - Presentationslagret}
+  \addcontentsline{toc}{subsection}{Vecka 41 - Presentationslagret}
+  \begin{table}[h!]
+          \caption{Tabell med tredje milstolpen V.41\label{tab:6}}            
+  \begin{tabularx}{\linewidth}{|l|l|X|l|l|l|l|}
+  \hline
+  Datum          & Typ       & Beskrivning                                                  & Uppskattad tid & Tidsåtgång & Kännedom & Prio \\ [0.5ex]
+  \hline                                             
+        Fre 9/10 & Milstolpe & \makecell[tl]{Presentationslagret \\samverkar med datalagret} &                &            & Vag      & 1 \\
+    \hline
+  \end{tabularx}
+        \end{table}
+        
+Presentationslagret. Se tabell: \ref{tab:6}
+\begin{itemize}
+  \item 6/10 1 tim Potentiella ändringar av LOFI:n diskuterades. Ändringar skrevs på den fysiska representationen av LOFI-prototypen. Det tog 1 timme.
+  \item 4 tim Temasida som agerar template åt alla andra sidor färdigställdes. Mer kunskap kring Jinja2, HTML5 och CSS3 inhämtades.
+  \item 3 tim Statisk eller dynamisk sida med profilbild och bild för senaste projekt samt 'Om mig' text på / sidan gjordes i ordning.
+  \item 5 tim Dynamisk sida som sorterar och listar projekten på /list slutfördes. Knappar som sorterar sökresultaten lades till. För varje sökresultat har mindre beskrivning och liten bild lagts till.                  
+  \item 3 tim Fullständig infosida för specifikt proj med id på /project/id visas på samtliga projektsidor.
+  \item 3 tim På /techniques visas en sammanställning av alla project baserat på använda tekniker.
+  \item 2 tim Flask app skrevs som innehöll @app.route:s med logiken för att hämta samtliga sidor. Det tog 2 timmar (6/10) +
+  \item Katalogstrukturen för portfolion sattes upp och de initiella filerna skapades. Portfolion sattes upp som ett pythonpaket efter instruktioner på flask hemsidan. Det tog 1 timme (6/10)
+  \item 7/10 add\_project funktion i api:et implementerades och bugg gällande databasens korrumption hittades och löstes. Det tog 3 timmar 20 minuter.
+    \item 8/10 Bugg gällande databasens inladdning hittades och löstes. Det tog 2 timmar.
+\end{itemize}
+
+Ambitionsmål för veckan:
+\begin{itemize}
+\item 5 tim Teknikers omfattningen i ett visst projekt lades till.
+\item 2 tim Ett bildspel innehållandes projektbilder på förstasidan lades till.
+\end{itemize}
+
+\newpage
+
+\subsection*{Vecka 42 - Systemdokumentation, -demonstration och Portfolio publicering}
+\addcontentsline{toc}{subsection}{Vecka 42 - Systemdokumentation, -demonstration och Portfolio publicering}
+\begin{table}[h!]
+        \caption{Tabell över deadlines V.42\label{tab:7}}
+\begin{tabularx}{\linewidth}{|l|l|X|l|l|l|l|}
+  \hline
+  Datum            & Typ           & Beskrivning                                         & Uppskattad tid & Tidsåtgång & Kännedom & Prio \\ [0.5ex]
+  \hline                                             
+        Tors 15/10 & Hård deadline & \makecell[tl]{Portfolion\\ Publicerad}              & -              &            & Vag      & 1 \\ \hline
+                   & Hård deadline & Systemdemonstration                                 & 3 tim          &            & Vag      & 1    \\
+  \hline                                             
+                   & Hård deadline & \makecell[tl]{1:a Versionen \\ Systemdokumentation} & 9 tim 30 min   &            & Vag      & 3 \\
+  \hline
+\end{tabularx}
+    \end{table}
+    
+1:a Versionen Systemdokumentation. Se tabell: \ref{tab:7}
+\begin{itemize}
+  \item 1 tim Systemdokumentationens specifika innehåll togs fram.
+  \item 1 tim Mindmap samt skiss för översiktsbild gjordes.
+  \item 2 tim Sekvensdiagram ritades.
+  \item 2 tim Dokumentation kring felhantering skrevs.
+  \item 1 tim Beskrivning av metoder och program som används vid felsökning gjordes.
+  \item 2 tim Ett första utkast skrevs.
+  \item 2 tim Systemdokumentation renskrevs.
+  \item 30 min Bilders position rättades till och systemdokumentationen renskrevs.
+\end{itemize}
+
+Portfolion Publicerad. Se tabell: \ref{tab:7}
+\begin{itemize}
+\item 1-2 tim Potentiella buggar reddes ut.
+  \end{itemize}
+
+Ambitionsmål för veckan:
+\begin{itemize}
+\item 4 tim Portföljerna gjordes personliga.
+\end{itemize}
+
+\newpage
+
+\subsection*{Vecka 43 - Reflektionsblad och Testdokumentation}
+\addcontentsline{toc}{subsection}{Vecka 43 - Reflektionsblad och Testdokumentation}
+\begin{table}[h!]
+\caption{Tabell över deadlines V.43\label{tab:8}}  
+\begin{tabularx}{\linewidth}{|l|l|X|l|l|l|l|}
+  \hline
+  Datum      & Typ           & Beskrivning                                       & Uppskattad tid & Tidsåtgång & Kännedom & Prio \\ [0.5ex]
+  \hline                                                                             
+  Tors 22/10 & Hård deadline & Testdokumentation inlämnad                        & 3 tim 30 min   &            & Vag      & 1\\
+  \hline                                                                             
+             & Hård deadline & \makecell[tl]{Individuellt \\ Reflektionsblad}    & 5 tim          &            & Vag      & 1\\
+  \hline                                                                             
+             & Hård deadline & Korrigerat event. brister i systemdokumentationen & 0-4 tim        &            & Vag      & 2\\
+  \hline
+\end{tabularx}      
+      \end{table}
+
+Testdokumentation inlämnad. Se tabell: \ref{tab:8}
+\begin{itemize}
+  \item 1 tim Daterad testlogg där samtliga testfall som körts togs fram.
+  \item 1 tim Minst ett relevant testfall per funktionellt krav dokumenterades.
+  \item 1 tim min Testdokumentationen skrevs.
+  \item 30 min Bilder och text rättades till.
+\end{itemize}
+
+Individuellt Reflektionsblad. Se tabell: \ref{tab:8}
+\begin{itemize}
+\item 1 tim Relevanta delar plockades ut från dagboken.
+  \item 1 tim Delarna skrevs ihop i ett latex dokument.
+  \item 30 min Potentiella bilder formaterades och text rättades..
+\end{itemize}
+  
+  Korrigerat eventuella brister i systemdokumentationen. Se tabell: \ref{tab:8}
+\begin{itemize}
+  \item 0-4 tim Potentiella brister rättades till.
+\end{itemize}
+
+Ambitionsmål för veckan:
+\begin{itemize}
+  \item 5 tim Portfolio laddades upp på egen webbserver.
+\end{itemize}
+
+\end{document}

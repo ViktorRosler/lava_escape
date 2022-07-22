@@ -1,0 +1,80 @@
+\hypertarget{classMenu__State}{}\doxysection{Menu\+\_\+\+State Class Reference}
+\label{classMenu__State}\index{Menu\_State@{Menu\_State}}
+
+
+{\ttfamily \#include $<$menu\+\_\+state.\+h$>$}
+
+
+
+Inheritance diagram for Menu\+\_\+\+State\+:
+% FIG 0
+
+
+Collaboration diagram for Menu\+\_\+\+State\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMenu__State_ad42ea76ba69ee366cfc05e41743c02cd}\label{classMenu__State_ad42ea76ba69ee366cfc05e41743c02cd}} 
+{\bfseries Menu\+\_\+\+State} (Menu\+\_\+\+Type type, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classState}{State}} $>$ game=nullptr)
+\item 
+\mbox{\hyperlink{classMenu__State_af6a393f7b07209ffb0f3e58a9850d0d6}{$\sim$\+Menu\+\_\+\+State}} ()=default
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classState}{State}} $>$ \mbox{\hyperlink{classMenu__State_a677782c95ab5f8f69187a6b188d1b7a9}{take\+\_\+user\+\_\+input}} () override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classState}{State}} $>$ \mbox{\hyperlink{classMenu__State_ae3094aeea4bfda20f9d005bd2f321b63}{update}} (sf\+::\+Time time) override
+\item 
+void \mbox{\hyperlink{classMenu__State_a46ad8da266c214fcf086adde3092d263}{draw}} (sf\+::\+Render\+Window \&window) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A state class that represents the program being in a menu. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMenu__State_af6a393f7b07209ffb0f3e58a9850d0d6}\label{classMenu__State_af6a393f7b07209ffb0f3e58a9850d0d6}} 
+\index{Menu\_State@{Menu\_State}!````~Menu\_State@{$\sim$Menu\_State}}
+\index{````~Menu\_State@{$\sim$Menu\_State}!Menu\_State@{Menu\_State}}
+\doxysubsubsection{\texorpdfstring{$\sim$Menu\_State()}{~Menu\_State()}}
+{\footnotesize\ttfamily Menu\+\_\+\+State\+::$\sim$\+Menu\+\_\+\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Default destructor. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMenu__State_a46ad8da266c214fcf086adde3092d263}\label{classMenu__State_a46ad8da266c214fcf086adde3092d263}} 
+\index{Menu\_State@{Menu\_State}!draw@{draw}}
+\index{draw@{draw}!Menu\_State@{Menu\_State}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Menu\+\_\+\+State\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called to draw a \mbox{\hyperlink{classGame__State}{Game\+\_\+\+State}} to the screen. 
+
+Implements \mbox{\hyperlink{classState_a8d027a56eb39e427e17cc03ce82e5d77}{State}}.
+
+\mbox{\Hypertarget{classMenu__State_a677782c95ab5f8f69187a6b188d1b7a9}\label{classMenu__State_a677782c95ab5f8f69187a6b188d1b7a9}} 
+\index{Menu\_State@{Menu\_State}!take\_user\_input@{take\_user\_input}}
+\index{take\_user\_input@{take\_user\_input}!Menu\_State@{Menu\_State}}
+\doxysubsubsection{\texorpdfstring{take\_user\_input()}{take\_user\_input()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classState}{State}} $>$ Menu\+\_\+\+State\+::take\+\_\+user\+\_\+input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Handles user keyboard-\/ and button presses. May result in a state change between \mbox{\hyperlink{classGame__State}{Game\+\_\+\+State}} and \mbox{\hyperlink{classMenu__State}{Menu\+\_\+\+State}}. 
+
+Implements \mbox{\hyperlink{classState_ac57cefb8d33356c82a9e0b0c4d448d73}{State}}.
+
+\mbox{\Hypertarget{classMenu__State_ae3094aeea4bfda20f9d005bd2f321b63}\label{classMenu__State_ae3094aeea4bfda20f9d005bd2f321b63}} 
+\index{Menu\_State@{Menu\_State}!update@{update}}
+\index{update@{update}!Menu\_State@{Menu\_State}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classState}{State}} $>$ Menu\+\_\+\+State\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called to update a \mbox{\hyperlink{classMenu__State}{Menu\+\_\+\+State}}. 
+
+Implements \mbox{\hyperlink{classState_a40b6d9b13c991f9292f1831f108a11e7}{State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+menu\+\_\+state.\+h\item 
+menu\+\_\+state.\+cpp\end{DoxyCompactItemize}

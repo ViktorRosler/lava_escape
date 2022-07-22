@@ -1,0 +1,27 @@
+digraph "Game_Object"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="Game_Object",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Textured_Object",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTextured__Object.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Animated_Object",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classAnimated__Object.html",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Lava",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classLava.html",tooltip=" "];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Moving_Object",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMoving__Object.html",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="Enemy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEnemy.html",tooltip=" "];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="Flying_Enemy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classFlying__Enemy.html",tooltip=" "];
+  Node6 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="Jumping_Enemy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classJumping__Enemy.html",tooltip=" "];
+  Node6 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="Walking_Enemy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classWalking__Enemy.html",tooltip=" "];
+  Node5 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="Player",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPlayer.html",tooltip=" "];
+  Node5 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="Projectile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classProjectile.html",tooltip=" "];
+}

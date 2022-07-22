@@ -1,0 +1,91 @@
+\hypertarget{classTextured__Object}{}\doxysection{Textured\+\_\+\+Object Class Reference}
+\label{classTextured__Object}\index{Textured\_Object@{Textured\_Object}}
+
+
+{\ttfamily \#include $<$textured\+\_\+object.\+h$>$}
+
+
+
+Inheritance diagram for Textured\+\_\+\+Object\+:
+% FIG 0
+
+
+Collaboration diagram for Textured\+\_\+\+Object\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTextured__Object_aad1574c93adfea26e82924d0272cc0d5}{Textured\+\_\+\+Object}} (sf\+::\+Float\+Rect \&\mbox{\hyperlink{classGame__Object_aec415041e15319d739dd6da04b95b811}{rect}}, sf\+::\+Sprite \&shape)
+\item 
+\mbox{\hyperlink{classTextured__Object_a8822b9f15ea5fe347e78ca1661eb3a1c}{$\sim$\+Textured\+\_\+\+Object}} ()=default
+\item 
+Update\+\_\+\+Result \mbox{\hyperlink{classTextured__Object_a6c84fc327c944c7882c1f5a27756bfdc}{update}} (sf\+::\+Time const \&time, \mbox{\hyperlink{classLevel}{Level}} \&level) override
+\item 
+void \mbox{\hyperlink{classTextured__Object_a999c0af138b38c7f60817e96cc235a62}{draw}} (sf\+::\+Render\+Window \&window) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{classTextured__Object_a53206fbdf758371354849320eb86665b}{sprite}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+An game object with a texture. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTextured__Object_aad1574c93adfea26e82924d0272cc0d5}\label{classTextured__Object_aad1574c93adfea26e82924d0272cc0d5}} 
+\index{Textured\_Object@{Textured\_Object}!Textured\_Object@{Textured\_Object}}
+\index{Textured\_Object@{Textured\_Object}!Textured\_Object@{Textured\_Object}}
+\doxysubsubsection{\texorpdfstring{Textured\_Object()}{Textured\_Object()}}
+{\footnotesize\ttfamily Textured\+\_\+\+Object\+::\+Textured\+\_\+\+Object (\begin{DoxyParamCaption}\item[{sf\+::\+Float\+Rect \&}]{rect,  }\item[{sf\+::\+Sprite \&}]{shape }\end{DoxyParamCaption})}
+
+Create a textured object with a bounding rectangle and a textured shape. \mbox{\Hypertarget{classTextured__Object_a8822b9f15ea5fe347e78ca1661eb3a1c}\label{classTextured__Object_a8822b9f15ea5fe347e78ca1661eb3a1c}} 
+\index{Textured\_Object@{Textured\_Object}!````~Textured\_Object@{$\sim$Textured\_Object}}
+\index{````~Textured\_Object@{$\sim$Textured\_Object}!Textured\_Object@{Textured\_Object}}
+\doxysubsubsection{\texorpdfstring{$\sim$Textured\_Object()}{~Textured\_Object()}}
+{\footnotesize\ttfamily Textured\+\_\+\+Object\+::$\sim$\+Textured\+\_\+\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Default destructor. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTextured__Object_a999c0af138b38c7f60817e96cc235a62}\label{classTextured__Object_a999c0af138b38c7f60817e96cc235a62}} 
+\index{Textured\_Object@{Textured\_Object}!draw@{draw}}
+\index{draw@{draw}!Textured\_Object@{Textured\_Object}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Textured\+\_\+\+Object\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Draw a textured object to the screen. 
+
+Implements \mbox{\hyperlink{classGame__Object_aa7194a2784c7a851051a34dd500f4668}{Game\+\_\+\+Object}}.
+
+\mbox{\Hypertarget{classTextured__Object_a6c84fc327c944c7882c1f5a27756bfdc}\label{classTextured__Object_a6c84fc327c944c7882c1f5a27756bfdc}} 
+\index{Textured\_Object@{Textured\_Object}!update@{update}}
+\index{update@{update}!Textured\_Object@{Textured\_Object}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily Update\+\_\+\+Result Textured\+\_\+\+Object\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time const \&}]{time,  }\item[{\mbox{\hyperlink{classLevel}{Level}} \&}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Update the state of an object over time. Empty implementation for derived classes to override. 
+
+Implements \mbox{\hyperlink{classGame__Object_aecd768b41e42c62b35a6464a4284a189}{Game\+\_\+\+Object}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classWalking__Enemy_a125841d44424bdedff2b7e36c9a28e64}{Walking\+\_\+\+Enemy}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classTextured__Object_a53206fbdf758371354849320eb86665b}\label{classTextured__Object_a53206fbdf758371354849320eb86665b}} 
+\index{Textured\_Object@{Textured\_Object}!sprite@{sprite}}
+\index{sprite@{sprite}!Textured\_Object@{Textured\_Object}}
+\doxysubsubsection{\texorpdfstring{sprite}{sprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite Textured\+\_\+\+Object\+::sprite\hspace{0.3cm}{\ttfamily [protected]}}
+
+Textured sprite used to draw an object. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+textured\+\_\+object.\+h\item 
+textured\+\_\+object.\+cpp\end{DoxyCompactItemize}

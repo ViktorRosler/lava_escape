@@ -1,0 +1,110 @@
+\hypertarget{classAnimated__Object}{}\doxysection{Animated\+\_\+\+Object Class Reference}
+\label{classAnimated__Object}\index{Animated\_Object@{Animated\_Object}}
+
+
+{\ttfamily \#include $<$animated\+\_\+object.\+h$>$}
+
+
+
+Inheritance diagram for Animated\+\_\+\+Object\+:
+% FIG 0
+
+
+Collaboration diagram for Animated\+\_\+\+Object\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAnimated__Object_aa47672564db27eb378773e454c2d90a5}{Animated\+\_\+\+Object}} (sf\+::\+Float\+Rect \&\mbox{\hyperlink{classGame__Object_aec415041e15319d739dd6da04b95b811}{rect}}, sf\+::\+Sprite \&\mbox{\hyperlink{classTextured__Object_a53206fbdf758371354849320eb86665b}{sprite}}, int frame=0)
+\item 
+Update\+\_\+\+Result \mbox{\hyperlink{classAnimated__Object_aa882ab16154f28a2c1e02ad17e468618}{update}} (sf\+::\+Time const \&time, \mbox{\hyperlink{classLevel}{Level}} \&level) override
+\item 
+void \mbox{\hyperlink{classAnimated__Object_afee9805d75a92aa4ae47c2aeb278a6ab}{draw}} (sf\+::\+Render\+Window \&window) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classAnimated__Object_aae54d2b0fc45c524078b28108758238f}{animate}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Time \mbox{\hyperlink{classAnimated__Object_a6ac251aa39001be203d1f9d23515f5d1}{animation\+\_\+timer}}
+\item 
+int \mbox{\hyperlink{classAnimated__Object_ace35a81d6af6b27424536799333fc3b4}{current\+\_\+frame}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A textured object that is animated. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAnimated__Object_aa47672564db27eb378773e454c2d90a5}\label{classAnimated__Object_aa47672564db27eb378773e454c2d90a5}} 
+\index{Animated\_Object@{Animated\_Object}!Animated\_Object@{Animated\_Object}}
+\index{Animated\_Object@{Animated\_Object}!Animated\_Object@{Animated\_Object}}
+\doxysubsubsection{\texorpdfstring{Animated\_Object()}{Animated\_Object()}}
+{\footnotesize\ttfamily Animated\+\_\+\+Object\+::\+Animated\+\_\+\+Object (\begin{DoxyParamCaption}\item[{sf\+::\+Float\+Rect \&}]{rect,  }\item[{sf\+::\+Sprite \&}]{sprite,  }\item[{int}]{frame = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Create an animated object with a bounding rectangle, and a textured shape. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAnimated__Object_aae54d2b0fc45c524078b28108758238f}\label{classAnimated__Object_aae54d2b0fc45c524078b28108758238f}} 
+\index{Animated\_Object@{Animated\_Object}!animate@{animate}}
+\index{animate@{animate}!Animated\_Object@{Animated\_Object}}
+\doxysubsubsection{\texorpdfstring{animate()}{animate()}}
+{\footnotesize\ttfamily void Animated\+\_\+\+Object\+::animate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Determines which frame of an animation will be drawn. 
+
+Reimplemented in \mbox{\hyperlink{classEnemy_ae9740ce91812dc5e8456e9a363e3e807}{Enemy}}.
+
+\mbox{\Hypertarget{classAnimated__Object_afee9805d75a92aa4ae47c2aeb278a6ab}\label{classAnimated__Object_afee9805d75a92aa4ae47c2aeb278a6ab}} 
+\index{Animated\_Object@{Animated\_Object}!draw@{draw}}
+\index{draw@{draw}!Animated\_Object@{Animated\_Object}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Animated\+\_\+\+Object\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Animate then draw. 
+
+Implements \mbox{\hyperlink{classGame__Object_aa7194a2784c7a851051a34dd500f4668}{Game\+\_\+\+Object}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classPlayer_a807c1f46676805c16b0a2a5838c5822a}{Player}}, and \mbox{\hyperlink{classMoving__Object_aeae817d621f35457b52c99823db93b50}{Moving\+\_\+\+Object}}.
+
+\mbox{\Hypertarget{classAnimated__Object_aa882ab16154f28a2c1e02ad17e468618}\label{classAnimated__Object_aa882ab16154f28a2c1e02ad17e468618}} 
+\index{Animated\_Object@{Animated\_Object}!update@{update}}
+\index{update@{update}!Animated\_Object@{Animated\_Object}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily Update\+\_\+\+Result Animated\+\_\+\+Object\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time const \&}]{time,  }\item[{\mbox{\hyperlink{classLevel}{Level}} \&}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Advance the animation timer. 
+
+Implements \mbox{\hyperlink{classGame__Object_aecd768b41e42c62b35a6464a4284a189}{Game\+\_\+\+Object}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classPlayer_a0b419c3b6a364bea158cbab18de4685d}{Player}}, \mbox{\hyperlink{classEnemy_af625bf98552227f13c63820da1ab3a03}{Enemy}}, \mbox{\hyperlink{classLava_a074554c583542a6d1e7b31c0ea013296}{Lava}}, \mbox{\hyperlink{classMoving__Object_a6dfe10727edbd1c603accb3b6e81ace2}{Moving\+\_\+\+Object}}, \mbox{\hyperlink{classProjectile_adfea5dd7ee5329cb32f1d4bf6a3e532f}{Projectile}}, \mbox{\hyperlink{classWalking__Enemy_a125841d44424bdedff2b7e36c9a28e64}{Walking\+\_\+\+Enemy}}, \mbox{\hyperlink{classFlying__Enemy_a5f1131df8e0718f73c7ba4461344ec53}{Flying\+\_\+\+Enemy}}, and \mbox{\hyperlink{classJumping__Enemy_af7b425dbaa59580a450a31b934e765b2}{Jumping\+\_\+\+Enemy}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classAnimated__Object_a6ac251aa39001be203d1f9d23515f5d1}\label{classAnimated__Object_a6ac251aa39001be203d1f9d23515f5d1}} 
+\index{Animated\_Object@{Animated\_Object}!animation\_timer@{animation\_timer}}
+\index{animation\_timer@{animation\_timer}!Animated\_Object@{Animated\_Object}}
+\doxysubsubsection{\texorpdfstring{animation\_timer}{animation\_timer}}
+{\footnotesize\ttfamily sf\+::\+Time Animated\+\_\+\+Object\+::animation\+\_\+timer\hspace{0.3cm}{\ttfamily [protected]}}
+
+Time since an animation updated. \mbox{\Hypertarget{classAnimated__Object_ace35a81d6af6b27424536799333fc3b4}\label{classAnimated__Object_ace35a81d6af6b27424536799333fc3b4}} 
+\index{Animated\_Object@{Animated\_Object}!current\_frame@{current\_frame}}
+\index{current\_frame@{current\_frame}!Animated\_Object@{Animated\_Object}}
+\doxysubsubsection{\texorpdfstring{current\_frame}{current\_frame}}
+{\footnotesize\ttfamily int Animated\+\_\+\+Object\+::current\+\_\+frame\hspace{0.3cm}{\ttfamily [protected]}}
+
+The current frame of an animation. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+animated\+\_\+object.\+h\item 
+animated\+\_\+object.\+cpp\end{DoxyCompactItemize}

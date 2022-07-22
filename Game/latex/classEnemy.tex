@@ -1,0 +1,126 @@
+\hypertarget{classEnemy}{}\doxysection{Enemy Class Reference}
+\label{classEnemy}\index{Enemy@{Enemy}}
+
+
+{\ttfamily \#include $<$enemy.\+h$>$}
+
+
+
+Inheritance diagram for Enemy\+:
+% FIG 0
+
+
+Collaboration diagram for Enemy\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEnemy_a908b6d605031b60bd4e743c9260c195b}{Enemy}} (sf\+::\+Float\+Rect \&\mbox{\hyperlink{classGame__Object_aec415041e15319d739dd6da04b95b811}{rect}}, sf\+::\+Sprite \&\mbox{\hyperlink{classTextured__Object_a53206fbdf758371354849320eb86665b}{sprite}}, int \mbox{\hyperlink{classEnemy_aedd5e7bf8ef07ee97be433c853a10d8d}{health}}, double \mbox{\hyperlink{classEnemy_a12fb65ebecce9c4370140b3603754224}{move\+\_\+radius}})
+\item 
+Update\+\_\+\+Result \mbox{\hyperlink{classEnemy_af625bf98552227f13c63820da1ab3a03}{update}} (sf\+::\+Time const \&time, \mbox{\hyperlink{classLevel}{Level}} \&level) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classEnemy_a0ba35e4a2589d8249398ce305deeeb4c}{random\+\_\+int}} (int min, int max)
+\item 
+void \mbox{\hyperlink{classEnemy_ae9740ce91812dc5e8456e9a363e3e807}{animate}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classEnemy_aedd5e7bf8ef07ee97be433c853a10d8d}{health}}
+\item 
+double \mbox{\hyperlink{classEnemy_a12fb65ebecce9c4370140b3603754224}{move\+\_\+radius}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{classEnemy_a63b578ea6f1b5fd1b7464a58e85ac657}{start\+\_\+pos}}
+\item 
+sf\+::\+Time \mbox{\hyperlink{classEnemy_adb395d8e7519f2e396bd3c7d119adcdd}{time\+\_\+since\+\_\+damage}}
+\item 
+sf\+::\+Time \mbox{\hyperlink{classEnemy_a11971321917d0f9f4a02c96d01a425a9}{action\+\_\+timer}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for all enemies. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEnemy_a908b6d605031b60bd4e743c9260c195b}\label{classEnemy_a908b6d605031b60bd4e743c9260c195b}} 
+\index{Enemy@{Enemy}!Enemy@{Enemy}}
+\index{Enemy@{Enemy}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{Enemy()}{Enemy()}}
+{\footnotesize\ttfamily Enemy\+::\+Enemy (\begin{DoxyParamCaption}\item[{sf\+::\+Float\+Rect \&}]{rect,  }\item[{sf\+::\+Sprite \&}]{sprite,  }\item[{int}]{health,  }\item[{double}]{move\+\_\+radius }\end{DoxyParamCaption})}
+
+Create an enemy object with a bounding rectangle, a textured shape, a health value and a .movement radius. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEnemy_ae9740ce91812dc5e8456e9a363e3e807}\label{classEnemy_ae9740ce91812dc5e8456e9a363e3e807}} 
+\index{Enemy@{Enemy}!animate@{animate}}
+\index{animate@{animate}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{animate()}{animate()}}
+{\footnotesize\ttfamily void Enemy\+::animate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Determines which frame of an animation will be drawn. 
+
+Reimplemented from \mbox{\hyperlink{classAnimated__Object_aae54d2b0fc45c524078b28108758238f}{Animated\+\_\+\+Object}}.
+
+\mbox{\Hypertarget{classEnemy_a0ba35e4a2589d8249398ce305deeeb4c}\label{classEnemy_a0ba35e4a2589d8249398ce305deeeb4c}} 
+\index{Enemy@{Enemy}!random\_int@{random\_int}}
+\index{random\_int@{random\_int}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{random\_int()}{random\_int()}}
+{\footnotesize\ttfamily int Enemy\+::random\+\_\+int (\begin{DoxyParamCaption}\item[{int}]{min,  }\item[{int}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Helper function that returns a random integer between min and max, inclusive. \mbox{\Hypertarget{classEnemy_af625bf98552227f13c63820da1ab3a03}\label{classEnemy_af625bf98552227f13c63820da1ab3a03}} 
+\index{Enemy@{Enemy}!update@{update}}
+\index{update@{update}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily Update\+\_\+\+Result Enemy\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time const \&}]{time,  }\item[{\mbox{\hyperlink{classLevel}{Level}} \&}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Keeps an enemy within its radius and calls resolve\+\_\+collisions. 
+
+Reimplemented from \mbox{\hyperlink{classAnimated__Object_aa882ab16154f28a2c1e02ad17e468618}{Animated\+\_\+\+Object}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classWalking__Enemy_a125841d44424bdedff2b7e36c9a28e64}{Walking\+\_\+\+Enemy}}, \mbox{\hyperlink{classFlying__Enemy_a5f1131df8e0718f73c7ba4461344ec53}{Flying\+\_\+\+Enemy}}, and \mbox{\hyperlink{classJumping__Enemy_af7b425dbaa59580a450a31b934e765b2}{Jumping\+\_\+\+Enemy}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classEnemy_a11971321917d0f9f4a02c96d01a425a9}\label{classEnemy_a11971321917d0f9f4a02c96d01a425a9}} 
+\index{Enemy@{Enemy}!action\_timer@{action\_timer}}
+\index{action\_timer@{action\_timer}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{action\_timer}{action\_timer}}
+{\footnotesize\ttfamily sf\+::\+Time Enemy\+::action\+\_\+timer\hspace{0.3cm}{\ttfamily [protected]}}
+
+Time since the enemy \mbox{\Hypertarget{classEnemy_aedd5e7bf8ef07ee97be433c853a10d8d}\label{classEnemy_aedd5e7bf8ef07ee97be433c853a10d8d}} 
+\index{Enemy@{Enemy}!health@{health}}
+\index{health@{health}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{health}{health}}
+{\footnotesize\ttfamily int Enemy\+::health\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\hyperlink{classEnemy}{Enemy}} health. Varies depending on enemy type. \mbox{\Hypertarget{classEnemy_a12fb65ebecce9c4370140b3603754224}\label{classEnemy_a12fb65ebecce9c4370140b3603754224}} 
+\index{Enemy@{Enemy}!move\_radius@{move\_radius}}
+\index{move\_radius@{move\_radius}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{move\_radius}{move\_radius}}
+{\footnotesize\ttfamily double Enemy\+::move\+\_\+radius\hspace{0.3cm}{\ttfamily [protected]}}
+
+Maximum range an enemy can move from its starting position. \mbox{\Hypertarget{classEnemy_a63b578ea6f1b5fd1b7464a58e85ac657}\label{classEnemy_a63b578ea6f1b5fd1b7464a58e85ac657}} 
+\index{Enemy@{Enemy}!start\_pos@{start\_pos}}
+\index{start\_pos@{start\_pos}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{start\_pos}{start\_pos}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Enemy\+::start\+\_\+pos\hspace{0.3cm}{\ttfamily [protected]}}
+
+Start position of an enemy. \mbox{\Hypertarget{classEnemy_adb395d8e7519f2e396bd3c7d119adcdd}\label{classEnemy_adb395d8e7519f2e396bd3c7d119adcdd}} 
+\index{Enemy@{Enemy}!time\_since\_damage@{time\_since\_damage}}
+\index{time\_since\_damage@{time\_since\_damage}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{time\_since\_damage}{time\_since\_damage}}
+{\footnotesize\ttfamily sf\+::\+Time Enemy\+::time\+\_\+since\+\_\+damage\hspace{0.3cm}{\ttfamily [protected]}}
+
+Time since the enemy took damage. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+enemy.\+h\item 
+enemy.\+cpp\end{DoxyCompactItemize}

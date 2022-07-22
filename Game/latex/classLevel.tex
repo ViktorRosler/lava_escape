@@ -1,0 +1,85 @@
+\hypertarget{classLevel}{}\doxysection{Level Class Reference}
+\label{classLevel}\index{Level@{Level}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLevel_a01316842ce46f324032896ccb9a5e13f}{Level}} (std\+::multiset$<$ std\+::pair$<$ int, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classGame__Object}{Game\+\_\+\+Object}} $>$$>$$>$ \&game\+\_\+objects, sf\+::\+Vector2f \&\mbox{\hyperlink{classLevel_ab689a5f81e7afcdd8eb3fdc01941f540}{player\+\_\+pos}})
+\item 
+Update\+\_\+\+Result \mbox{\hyperlink{classLevel_ab085279864aa8739231acaad9ddf97c2}{update}} (sf\+::\+Time time)
+\item 
+void \mbox{\hyperlink{classLevel_ae622b99d275ee7fba8c073812b63d015}{draw}} (sf\+::\+Render\+Window \&window) const
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classGame__Object}{Game\+\_\+\+Object}} $>$ $>$ \mbox{\hyperlink{classLevel_a3ce5870df701aaad4b22aa0f78e6f90a}{get\+\_\+collisions}} (\mbox{\hyperlink{classGame__Object}{Game\+\_\+\+Object}} \&obj) const
+\item 
+void \mbox{\hyperlink{classLevel_a6622bb338602d512a6739ab413ae77ed}{add\+\_\+object}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classGame__Object}{Game\+\_\+\+Object}} $>$ obj, int draw\+\_\+priority)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classLevel_a102203062fe59be68a4d5e2f864563f3}{rising\+\_\+lava}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{classLevel_ab689a5f81e7afcdd8eb3fdc01941f540}{player\+\_\+pos}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLevel_a01316842ce46f324032896ccb9a5e13f}\label{classLevel_a01316842ce46f324032896ccb9a5e13f}} 
+\index{Level@{Level}!Level@{Level}}
+\index{Level@{Level}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{Level()}{Level()}}
+{\footnotesize\ttfamily Level\+::\+Level (\begin{DoxyParamCaption}\item[{std\+::multiset$<$ std\+::pair$<$ int, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classGame__Object}{Game\+\_\+\+Object}} $>$$>$$>$ \&}]{game\+\_\+objects,  }\item[{sf\+::\+Vector2f \&}]{player\+\_\+pos }\end{DoxyParamCaption})}
+
+Create a level consisting of the given objects. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLevel_a6622bb338602d512a6739ab413ae77ed}\label{classLevel_a6622bb338602d512a6739ab413ae77ed}} 
+\index{Level@{Level}!add\_object@{add\_object}}
+\index{add\_object@{add\_object}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{add\_object()}{add\_object()}}
+{\footnotesize\ttfamily void Level\+::add\+\_\+object (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classGame__Object}{Game\+\_\+\+Object}} $>$}]{obj,  }\item[{int}]{draw\+\_\+priority }\end{DoxyParamCaption})}
+
+Add an object to the level.
+
+Used to add a projectile to the level when a player/enemy shoots. \mbox{\Hypertarget{classLevel_ae622b99d275ee7fba8c073812b63d015}\label{classLevel_ae622b99d275ee7fba8c073812b63d015}} 
+\index{Level@{Level}!draw@{draw}}
+\index{draw@{draw}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Level\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption}) const}
+
+Draw a level to the screen. \mbox{\Hypertarget{classLevel_a3ce5870df701aaad4b22aa0f78e6f90a}\label{classLevel_a3ce5870df701aaad4b22aa0f78e6f90a}} 
+\index{Level@{Level}!get\_collisions@{get\_collisions}}
+\index{get\_collisions@{get\_collisions}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{get\_collisions()}{get\_collisions()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classGame__Object}{Game\+\_\+\+Object}} $>$ $>$ Level\+::get\+\_\+collisions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGame__Object}{Game\+\_\+\+Object}} \&}]{obj }\end{DoxyParamCaption}) const}
+
+Returns every object in a level that the parameter obj is colliding with. \mbox{\Hypertarget{classLevel_ab085279864aa8739231acaad9ddf97c2}\label{classLevel_ab085279864aa8739231acaad9ddf97c2}} 
+\index{Level@{Level}!update@{update}}
+\index{update@{update}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily Update\+\_\+\+Result Level\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{time }\end{DoxyParamCaption})}
+
+Update each object in a level based on time passed.
+
+Return value notifies \mbox{\hyperlink{classGame__State}{Game\+\_\+\+State}} if the player has completed or failed the level. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classLevel_ab689a5f81e7afcdd8eb3fdc01941f540}\label{classLevel_ab689a5f81e7afcdd8eb3fdc01941f540}} 
+\index{Level@{Level}!player\_pos@{player\_pos}}
+\index{player\_pos@{player\_pos}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{player\_pos}{player\_pos}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Level\+::player\+\_\+pos}
+
+Position of the player.
+
+Used to update the window view after drawing. \mbox{\Hypertarget{classLevel_a102203062fe59be68a4d5e2f864563f3}\label{classLevel_a102203062fe59be68a4d5e2f864563f3}} 
+\index{Level@{Level}!rising\_lava@{rising\_lava}}
+\index{rising\_lava@{rising\_lava}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{rising\_lava}{rising\_lava}}
+{\footnotesize\ttfamily bool Level\+::rising\+\_\+lava}
+
+Determines if the lava in the level is rising. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+level.\+h\item 
+level.\+cpp\end{DoxyCompactItemize}

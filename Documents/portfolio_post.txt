@@ -1,0 +1,18 @@
+Minst 2 bilder.
+
+Beskrivning. Vad handlar spelet om? Finns det en story? Vad ska man göra? Hur går det till att spela? Försök gärna att sälja läsaren på ert häftiga spel!
+
+Spelet Lava Escape handlar om att undfly den dödliga lavan och att så snabbt det är möjligt ta sig till nivåns högsta platform, men det är svårt! På vägen finns dödliga fiender som rör sig i oberäkneliga rörelsemönster och varje möjlig väg upp kanske istället visar sig vara dödlig? Det finns ett flertal olika stretegier för att ta sig upp och det kommer krävas många försök innan den ultimata vägen hittas.
+
+
+Lärdomar. Vad är de viktigaste lärdomarna ni tar med er från projektet? Vilka utvecklingstekniker, arbetssätt eller programmeringstricks har ni bemästrat nu? Vad kan ni nu som kan vara intressant för t.ex. en potentiell arbetsgivare?
+
+Den viktigaste lärdomen som getts av detta projekt är hur pass stor skillnad självdefinierade krav- och designspecifikationer gör i gruppens förhållningssätt till projektets kodbas. Det är enklare att förklara med hjälp av bilder och UML diagram där pilar och kuber förenklar samt förkortar tiden att förklara olika ideer över tid inom projektgruppen. 
+
+En andra lärdom är insikten om hur olika klasser kan interagera med varandra utan att veta om innehållet i dem. Innan projektet var det oklart hur ett objekt kunde fås att förflytta sig över skärmen och hur objekthanteringen gick till vid kollision av dessa två objekt.
+
+Taggar. Relevanta taggar ska så klart användas.
+
+C++, Make, CLion
+
+

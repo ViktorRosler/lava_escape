@@ -1,0 +1,76 @@
+TDP005 Statusrapport 1 14/12/20
+Daniel Huber danhu849, Viktor Rösler vikro653
+baserat på v1.1 av kravspecifikationen
+
+** NOTERINGAR ** 
+Före detta krav 21 "Spelet ska kunna spelas på skolans datorer." har efter betänkande strukits då vi dels ej bör vara på skolan och dels för att presentationen av spelet kommer ske online och ej på universitetet. Under rådande omständigheter tror vi att examinatorer tycker detta är ok.
+
+Krav 31 har uppdaterats till att "gå tillbaka till startmenyn" istället för att "avsluta nivån". Båda hänvisar till samma sak, men det sistnämnda har tydligare formulering.
+** **
+
+Förra veckans planerade och utförda arbete:
+* Fienders och projektilers förflyttning samt animering har implementerats. 
+* Relationen mellan Game_Object och Moving_Object tagits bort. 
+* Spelet är nu fullt spelbart dvs att spelkaraktären dör när spelarens liv når noll, en nivå avklaras när spelaren når högsta platformen. 
+* Fiender samt spelaren kan avfyra projektiler som gör ett i skada. Olika fiender har olika förflyttningsmönster i nivåerna som är animerade. 
+* Samtliga ska-krav har uppfyllts.
+* Menyer har har lagts in med funktionalitet att gå mellan nivåer och mellan menyer.
+
+
+Uppfyllda krav: 
+- 1. Spelaren ska kunna avfyra projektiler åt det håll spelaren är vänd åt.
+- 2. Varje nivå ska innehålla plattformar.
+- 3. Spelets nivåer ska vara lika breda som spelfönstret och vertikalt större än spelfönstret.
+- 4. Spelaren ska kunna styra en spelarfigur med tangentbordet.
+- 5. Spelaren ska ej kunna flytta sig igenom plattformar.
+- 6. Spelaren ska kunna stå på plattformar.
+- 7. Spelaren ska kunna hoppa från en plattform till en annan.  
+- 8. Nivån ska avklaras när den högst placerade plattformen nås av spelaren.   
+- 9. Varje nivå ska innehålla flera instanser av olika typer av fiender.
+-10. Det ska finnas en flygande fiendetyp som kan befinna sig mellan plattformar.
+-11. Det ska finnas en gående fiendetyp som ej förflyttas i höjdled.
+-12. Fiender ska ej kunna förflytta sig igenom plattformar.
+-13. Alla fiender och spelarens karaktär förutom de flygande fienderna påverkas av gravitation som drar dem nedåt mot spelarfönstrets botten.
+-14. När spelaren kolliderar med en fiende ska spelarens liv minskas med ett.
+-15. När spelarens liv när noll ska spelaren dö.
+-16. Projektiler ska vid kollision med fiender tas bort.
+-17. Vid kollision mellan spelarens projektiler och fiender ska fiendens liv minskas med ett.
+-18. Projektiler ska vid kollision med plattformar tas bort.
+-19. I spelet ska .csv filer kunna översättas till spelnivåer.
+-20. Spelets grafik ska vara tvådimensionell.
+-22. Spelet ska ha en startmeny där spelaren kan välja att starta spelet, visa en nivåmeny, eller avsluta spelet.
+-23. När spelarens liv minskas ska spelaren inte kunna förlora liv igen under 1.618 sekunder.
+-24. Spelarens rörelser ska vara animerade.
+-25. Fiendernas rörelser ska vara animerade.
+-26. Projektilernas rörelser ska vara animerade.
+-27. När en projektil tas bort ska en animerad explosion visas i dess plats.
+-28. Lavan ska vara animerad.
+-30. I nivåmenyn ska spelaren kunna välja nivå att spela.
+-31. Vid spelarens död ska en Game Over meny med möjlighet att starta om eller gå tillbaka till huvudmenyn visas i spelfönstret.
+-35. En hoppande fiendetyp ska finnas i spelet.
+-36. Den hoppande fiendetypen ska kunna avfyra projektiler som färdas i rak bana från avfyrningshöjden.
+-37. När den hoppande fiendens projektiler kolliderar med spelaren ska spelarens liv minskas med ett.
+-51. I startmenyn ska spelaren kunna välja att visa en nivåmeny.
+-52. I startmenyn ska spelaren kunna välja att avsluta spelet.
+-53. Spelaren ska efter första hoppet bli jagad av stigande lava.
+-54. Spelaren ska dö om lavan vidrörs.
+-55. Nivåns slutpunkt representeras av ett utseendemässigt distinkt område.
+-57. Spelet ska kunna pausas och återupptas genom att tangenten Esc trycks. 
+-58. Det ska finnas en livmätare i spelarfönstret där spelarens återstående liv visas.
+
+Planering för veckan: 
+Tankarna om multiplayer och bossar har lagts åt sidan med hänsyn till att hinna med att snygga till kodstrukturen och kommentera den med Doxygen samt att resterande dokument skrivs klart. I mån av tid planeras det att fler nivåer skapas och läggs till. 
+
+Planerade krav i prioriteringsorder:
+
+
+
+Backlog:
+------------- vecka 2:
+-
+
+------------- vecka 1:
+-
+
+------------- vecka 0:
+-

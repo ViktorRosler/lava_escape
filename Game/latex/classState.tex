@@ -1,0 +1,95 @@
+\hypertarget{classState}{}\doxysection{State Class Reference}
+\label{classState}\index{State@{State}}
+
+
+{\ttfamily \#include $<$state.\+h$>$}
+
+
+
+Inheritance diagram for State\+:
+% FIG 0
+
+
+Collaboration diagram for State\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classState_a95aa2ca390f05627acf00149efd568c7}{State}} ()=default
+\item 
+virtual \mbox{\hyperlink{classState_afab438d92b90dc18d194dbd9c9c8bab3}{$\sim$\+State}} ()
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classState}{State}} $>$ \mbox{\hyperlink{classState_ac57cefb8d33356c82a9e0b0c4d448d73}{take\+\_\+user\+\_\+input}} ()=0
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classState}{State}} $>$ \mbox{\hyperlink{classState_a40b6d9b13c991f9292f1831f108a11e7}{update}} (sf\+::\+Time time)=0
+\item 
+virtual void \mbox{\hyperlink{classState_a8d027a56eb39e427e17cc03ce82e5d77}{draw}} (sf\+::\+Render\+Window \&window)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classState_af869486665a289d09ee0becf4744a438}{run}} (sf\+::\+Render\+Window \&window, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classState}{State}} $>$ state, bool paused=false)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the state of the program. Only one \mbox{\hyperlink{classState}{State}} is active at a time. Can be either a \mbox{\hyperlink{classGame__State}{Game\+\_\+\+State}} or a \mbox{\hyperlink{classMenu__State}{Menu\+\_\+\+State}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classState_a95aa2ca390f05627acf00149efd568c7}\label{classState_a95aa2ca390f05627acf00149efd568c7}} 
+\index{State@{State}!State@{State}}
+\index{State@{State}!State@{State}}
+\doxysubsubsection{\texorpdfstring{State()}{State()}}
+{\footnotesize\ttfamily State\+::\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Default constructor. \mbox{\Hypertarget{classState_afab438d92b90dc18d194dbd9c9c8bab3}\label{classState_afab438d92b90dc18d194dbd9c9c8bab3}} 
+\index{State@{State}!````~State@{$\sim$State}}
+\index{````~State@{$\sim$State}!State@{State}}
+\doxysubsubsection{\texorpdfstring{$\sim$State()}{~State()}}
+{\footnotesize\ttfamily State\+::$\sim$\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Empty virtual destructor. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classState_a8d027a56eb39e427e17cc03ce82e5d77}\label{classState_a8d027a56eb39e427e17cc03ce82e5d77}} 
+\index{State@{State}!draw@{draw}}
+\index{draw@{draw}!State@{State}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily virtual void State\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Called to draw a \mbox{\hyperlink{classState}{State}} to the screen. 
+
+Implemented in \mbox{\hyperlink{classMenu__State_a46ad8da266c214fcf086adde3092d263}{Menu\+\_\+\+State}}, and \mbox{\hyperlink{classGame__State_a9e12bfa3dfd1aec48f7d74470a42e72e}{Game\+\_\+\+State}}.
+
+\mbox{\Hypertarget{classState_af869486665a289d09ee0becf4744a438}\label{classState_af869486665a289d09ee0becf4744a438}} 
+\index{State@{State}!run@{run}}
+\index{run@{run}!State@{State}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void State\+::run (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classState}{State}} $>$}]{state,  }\item[{bool}]{paused = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Run a \mbox{\hyperlink{classState}{State}}, handling state-\/switches, until completion. \mbox{\Hypertarget{classState_ac57cefb8d33356c82a9e0b0c4d448d73}\label{classState_ac57cefb8d33356c82a9e0b0c4d448d73}} 
+\index{State@{State}!take\_user\_input@{take\_user\_input}}
+\index{take\_user\_input@{take\_user\_input}!State@{State}}
+\doxysubsubsection{\texorpdfstring{take\_user\_input()}{take\_user\_input()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classState}{State}}$>$ State\+::take\+\_\+user\+\_\+input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Handles user keyboard-\/ and button input. May result in a state change between \mbox{\hyperlink{classGame__State}{Game\+\_\+\+State}} and \mbox{\hyperlink{classMenu__State}{Menu\+\_\+\+State}}. 
+
+Implemented in \mbox{\hyperlink{classMenu__State_a677782c95ab5f8f69187a6b188d1b7a9}{Menu\+\_\+\+State}}, and \mbox{\hyperlink{classGame__State_a4c0719d418da97943c2b4be867f3c7a5}{Game\+\_\+\+State}}.
+
+\mbox{\Hypertarget{classState_a40b6d9b13c991f9292f1831f108a11e7}\label{classState_a40b6d9b13c991f9292f1831f108a11e7}} 
+\index{State@{State}!update@{update}}
+\index{update@{update}!State@{State}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classState}{State}}$>$ State\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Called to update a \mbox{\hyperlink{classState}{State}}. Can result in a state change between \mbox{\hyperlink{classGame__State}{Game\+\_\+\+State}} and \mbox{\hyperlink{classMenu__State}{Menu\+\_\+\+State}}. 
+
+Implemented in \mbox{\hyperlink{classMenu__State_ae3094aeea4bfda20f9d005bd2f321b63}{Menu\+\_\+\+State}}, and \mbox{\hyperlink{classGame__State_a8f2f3114c1a614775850401f1ead8112}{Game\+\_\+\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+state.\+h\item 
+state.\+cpp\end{DoxyCompactItemize}

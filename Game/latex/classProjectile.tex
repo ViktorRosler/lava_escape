@@ -1,0 +1,65 @@
+\hypertarget{classProjectile}{}\doxysection{Projectile Class Reference}
+\label{classProjectile}\index{Projectile@{Projectile}}
+
+
+{\ttfamily \#include $<$projectile.\+h$>$}
+
+
+
+Inheritance diagram for Projectile\+:
+% FIG 0
+
+
+Collaboration diagram for Projectile\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classProjectile_ab538552f6d6a0aa87b3bf271a2774783}{Projectile}} (sf\+::\+Float\+Rect \&\mbox{\hyperlink{classGame__Object_aec415041e15319d739dd6da04b95b811}{rect}}, sf\+::\+Sprite \&\mbox{\hyperlink{classTextured__Object_a53206fbdf758371354849320eb86665b}{sprite}}, sf\+::\+Vector2f \mbox{\hyperlink{classMoving__Object_a25b58750b94fb0941d23dc4b9983beb2}{velocity}})
+\item 
+Update\+\_\+\+Result \mbox{\hyperlink{classProjectile_adfea5dd7ee5329cb32f1d4bf6a3e532f}{update}} (sf\+::\+Time const \&time, \mbox{\hyperlink{classLevel}{Level}} \&level) override
+\item 
+void \mbox{\hyperlink{classProjectile_a47adbace8dbd2a5ab925b31f93ad1d0f}{resolve\+\_\+collisions}} (std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classGame__Object}{Game\+\_\+\+Object}} $>$$>$ collisions) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A projectile that is created when the player or an enemy fire. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classProjectile_ab538552f6d6a0aa87b3bf271a2774783}\label{classProjectile_ab538552f6d6a0aa87b3bf271a2774783}} 
+\index{Projectile@{Projectile}!Projectile@{Projectile}}
+\index{Projectile@{Projectile}!Projectile@{Projectile}}
+\doxysubsubsection{\texorpdfstring{Projectile()}{Projectile()}}
+{\footnotesize\ttfamily Projectile\+::\+Projectile (\begin{DoxyParamCaption}\item[{sf\+::\+Float\+Rect \&}]{rect,  }\item[{sf\+::\+Sprite \&}]{sprite,  }\item[{sf\+::\+Vector2f}]{velocity }\end{DoxyParamCaption})}
+
+Create a projectile object with a bounding rectangle, a textured shape, and a velocity. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classProjectile_a47adbace8dbd2a5ab925b31f93ad1d0f}\label{classProjectile_a47adbace8dbd2a5ab925b31f93ad1d0f}} 
+\index{Projectile@{Projectile}!resolve\_collisions@{resolve\_collisions}}
+\index{resolve\_collisions@{resolve\_collisions}!Projectile@{Projectile}}
+\doxysubsubsection{\texorpdfstring{resolve\_collisions()}{resolve\_collisions()}}
+{\footnotesize\ttfamily void Projectile\+::resolve\+\_\+collisions (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classGame__Object}{Game\+\_\+\+Object}} $>$$>$}]{collisions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Handles collisions between moving objects and platforms + window borders. 
+
+Implements \mbox{\hyperlink{classMoving__Object_a1d8325e68b8a01eb17673ab873f7b43e}{Moving\+\_\+\+Object}}.
+
+\mbox{\Hypertarget{classProjectile_adfea5dd7ee5329cb32f1d4bf6a3e532f}\label{classProjectile_adfea5dd7ee5329cb32f1d4bf6a3e532f}} 
+\index{Projectile@{Projectile}!update@{update}}
+\index{update@{update}!Projectile@{Projectile}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily Update\+\_\+\+Result Projectile\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time const \&}]{time,  }\item[{\mbox{\hyperlink{classLevel}{Level}} \&}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Move or remove the projectile. 
+
+Reimplemented from \mbox{\hyperlink{classMoving__Object_a6dfe10727edbd1c603accb3b6e81ace2}{Moving\+\_\+\+Object}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+projectile.\+h\item 
+projectile.\+cpp\end{DoxyCompactItemize}

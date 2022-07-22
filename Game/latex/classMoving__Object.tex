@@ -1,0 +1,110 @@
+\hypertarget{classMoving__Object}{}\doxysection{Moving\+\_\+\+Object Class Reference}
+\label{classMoving__Object}\index{Moving\_Object@{Moving\_Object}}
+
+
+{\ttfamily \#include $<$moving\+\_\+object.\+h$>$}
+
+
+
+Inheritance diagram for Moving\+\_\+\+Object\+:
+% FIG 0
+
+
+Collaboration diagram for Moving\+\_\+\+Object\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMoving__Object_ae212ea352eb0023320f8e2a826584862}{Moving\+\_\+\+Object}} (sf\+::\+Float\+Rect \&\mbox{\hyperlink{classGame__Object_aec415041e15319d739dd6da04b95b811}{rect}}, sf\+::\+Sprite \&\mbox{\hyperlink{classTextured__Object_a53206fbdf758371354849320eb86665b}{sprite}}, sf\+::\+Vector2f \mbox{\hyperlink{classMoving__Object_a25b58750b94fb0941d23dc4b9983beb2}{velocity}}=sf\+::\+Vector2f\{0, 0\})
+\item 
+Update\+\_\+\+Result \mbox{\hyperlink{classMoving__Object_a6dfe10727edbd1c603accb3b6e81ace2}{update}} (sf\+::\+Time const \&time, \mbox{\hyperlink{classLevel}{Level}} \&level) override
+\item 
+void \mbox{\hyperlink{classMoving__Object_aeae817d621f35457b52c99823db93b50}{draw}} (sf\+::\+Render\+Window \&window) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classMoving__Object_a1d8325e68b8a01eb17673ab873f7b43e}{resolve\+\_\+collisions}} (std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classGame__Object}{Game\+\_\+\+Object}} $>$$>$ collisions)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{classMoving__Object_a25b58750b94fb0941d23dc4b9983beb2}{velocity}}
+\item 
+bool \mbox{\hyperlink{classMoving__Object_a7ebb73ed8ea7cbfdfb78404716f152c0}{flip\+\_\+sprite}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Animated object that can move (abstract) 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMoving__Object_ae212ea352eb0023320f8e2a826584862}\label{classMoving__Object_ae212ea352eb0023320f8e2a826584862}} 
+\index{Moving\_Object@{Moving\_Object}!Moving\_Object@{Moving\_Object}}
+\index{Moving\_Object@{Moving\_Object}!Moving\_Object@{Moving\_Object}}
+\doxysubsubsection{\texorpdfstring{Moving\_Object()}{Moving\_Object()}}
+{\footnotesize\ttfamily Moving\+\_\+\+Object\+::\+Moving\+\_\+\+Object (\begin{DoxyParamCaption}\item[{sf\+::\+Float\+Rect \&}]{rect,  }\item[{sf\+::\+Sprite \&}]{sprite,  }\item[{sf\+::\+Vector2f}]{velocity = {\ttfamily sf\+:\+:Vector2f\{0,0\}} }\end{DoxyParamCaption})}
+
+Create an moving object with a bounding rectangle, a textured shape, and a velocity. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMoving__Object_aeae817d621f35457b52c99823db93b50}\label{classMoving__Object_aeae817d621f35457b52c99823db93b50}} 
+\index{Moving\_Object@{Moving\_Object}!draw@{draw}}
+\index{draw@{draw}!Moving\_Object@{Moving\_Object}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Moving\+\_\+\+Object\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Display the object on the screen. 
+
+Reimplemented from \mbox{\hyperlink{classAnimated__Object_afee9805d75a92aa4ae47c2aeb278a6ab}{Animated\+\_\+\+Object}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classPlayer_a807c1f46676805c16b0a2a5838c5822a}{Player}}.
+
+\mbox{\Hypertarget{classMoving__Object_a1d8325e68b8a01eb17673ab873f7b43e}\label{classMoving__Object_a1d8325e68b8a01eb17673ab873f7b43e}} 
+\index{Moving\_Object@{Moving\_Object}!resolve\_collisions@{resolve\_collisions}}
+\index{resolve\_collisions@{resolve\_collisions}!Moving\_Object@{Moving\_Object}}
+\doxysubsubsection{\texorpdfstring{resolve\_collisions()}{resolve\_collisions()}}
+{\footnotesize\ttfamily void Moving\+\_\+\+Object\+::resolve\+\_\+collisions (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classGame__Object}{Game\+\_\+\+Object}} $>$$>$}]{collisions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Handles collisions between moving objects and platforms + window borders. 
+
+Implemented in \mbox{\hyperlink{classProjectile_a47adbace8dbd2a5ab925b31f93ad1d0f}{Projectile}}.
+
+\mbox{\Hypertarget{classMoving__Object_a6dfe10727edbd1c603accb3b6e81ace2}\label{classMoving__Object_a6dfe10727edbd1c603accb3b6e81ace2}} 
+\index{Moving\_Object@{Moving\_Object}!update@{update}}
+\index{update@{update}!Moving\_Object@{Moving\_Object}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily Update\+\_\+\+Result Moving\+\_\+\+Object\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time const \&}]{time,  }\item[{\mbox{\hyperlink{classLevel}{Level}} \&}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Move the object and call resolve\+\_\+collisions. 
+
+Reimplemented from \mbox{\hyperlink{classAnimated__Object_aa882ab16154f28a2c1e02ad17e468618}{Animated\+\_\+\+Object}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classPlayer_a0b419c3b6a364bea158cbab18de4685d}{Player}}, \mbox{\hyperlink{classProjectile_adfea5dd7ee5329cb32f1d4bf6a3e532f}{Projectile}}, and \mbox{\hyperlink{classWalking__Enemy_a125841d44424bdedff2b7e36c9a28e64}{Walking\+\_\+\+Enemy}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classMoving__Object_a7ebb73ed8ea7cbfdfb78404716f152c0}\label{classMoving__Object_a7ebb73ed8ea7cbfdfb78404716f152c0}} 
+\index{Moving\_Object@{Moving\_Object}!flip\_sprite@{flip\_sprite}}
+\index{flip\_sprite@{flip\_sprite}!Moving\_Object@{Moving\_Object}}
+\doxysubsubsection{\texorpdfstring{flip\_sprite}{flip\_sprite}}
+{\footnotesize\ttfamily bool Moving\+\_\+\+Object\+::flip\+\_\+sprite\hspace{0.3cm}{\ttfamily [protected]}}
+
+Determines if the texture should be flipped horizontally. false -\/$>$ face right. true -\/$>$ face left. \mbox{\Hypertarget{classMoving__Object_a25b58750b94fb0941d23dc4b9983beb2}\label{classMoving__Object_a25b58750b94fb0941d23dc4b9983beb2}} 
+\index{Moving\_Object@{Moving\_Object}!velocity@{velocity}}
+\index{velocity@{velocity}!Moving\_Object@{Moving\_Object}}
+\doxysubsubsection{\texorpdfstring{velocity}{velocity}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Moving\+\_\+\+Object\+::velocity\hspace{0.3cm}{\ttfamily [protected]}}
+
+The speed and direction the object is moving in. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+moving\+\_\+object.\+h\item 
+moving\+\_\+object.\+cpp\end{DoxyCompactItemize}

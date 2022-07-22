@@ -1,0 +1,138 @@
+\documentclass{TDP003mall}
+\usepackage[utf8]{inputenc}
+\usepackage[swedish]{babel}
+
+
+\newcommand{\version}{Version 1.0}
+\author{Daniel Huber, \url{danhu849@liu.se}\\
+  Jens Öhnell, \url{jenoh242@liu.se}}
+\title{Planeringsdokument}
+\date{2020-09-07}
+\rhead{Daniel Huber\\
+Jens Öhnell}
+
+
+
+\begin{document}
+\projectpage
+\section{Revisionshistorik}
+\begin{table}[!h]
+\begin{tabularx}{\linewidth}{|l|X|l|}
+\hline
+Ver. & Revisionsbeskrivning & Datum \\\hline
+1.0 & Planeringsdokument för TDP003 & 200909 \\\hline
+\end{tabularx}
+\end{table}
+
+
+\section{Översikt}
+Projektets mål är att skapa, presentera och underhålla en webbaserad portfolio. Portfolion innehåller de projekt som vi i och utanför universitetet kommer fullgöra under de kommande 3 åren. Kravspecifikationen är skriven av programledningen. För de avsnitt där det antingen är vagt eller inte alls specificerat vad eller hur något ska göras förväntas det att studenten tar egna initiativ. Exempel på detta är utseendet på användargränssnittet där nästintill fria tyglar ges.
+
+
+\section{Kravspecifikation}
+Projektet utgörs av två delar. Dels det slutanvändaren kan se, det presentativa, och dels det som denne inte kan se, datalagringen och datahämtningen.
+
+Projektet kräver att webbplatsen utrustas med fyra html-sidor skrivna i HTML5 och CSS3. En huvudsida/första sida som antingen kan vara statiskt eller dynamisk samt 3 stycken dynamiska sidor. De tre sistnämnda utgörs av en söksida, en projektsida och en tekniksida. Det är krav på att huvudsidan har bilder. Söksidan ska inneha funktionaliteten att kunna sortera projekt på projekt id samt göra det möjligt att kunna söka efter dem med hjälp av söktermer i ett formulär. Projektsidan ska visa fullständig information om det specifika projektet med en stor relevant bild. Om projektet inte finns visas relevant flekod i.e. status 404 'This page does not exist'. Tekniksidan innehåller information om projekten utifrån vilka tekniker och i hur stor omfattning dessa används i projekten. Varje projekt ska i listningar på söksidan och tekniksidan visas med en liten bild bredvid sig. Bildtext måste finnas till varje bild. Fel ska hanteras på ett, för slutanvändaren, informativt sätt så att denne kan förstå vad som gått fel.
+
+Utöver det presentativa utgörs projektets andra del av datalagring och implementering av funktioner som hämtar lagrad data och presenterar detta för användaren. Vi kallar detta för simpelhetens skull för back-end. Varje projekt-data-del i portföljen utgörs av projektnamn, projekt-id i form av ett unikt heltalsnummer, startdatum, slutdatum, kurskod, kursnamn, kurspoäng, nyttjade tekniker, sammanfattning, full beskrivning, liten och stor bild, antal gruppmedlemmar och länk till projektsida. Back-end ska kunna hantera samtliga innan nämnda informationsdelar om respektive projekt.
+
+Sökning med godtyckliga termer om projektets information genererar träffar och presenterar slutanvändaren med en lista där det mest förmodade objektet presenteras högst upp eller längst ner. Söklistan ska också kunna gå att sortera på använda tekniker. Det ska noteras att funktionaliteten ska möjliggöra sökning på ett ord, sortering och filtrering av tekniker kan ske samtidigt. Datan finns lagrad med UTF-8 teckenkodning i JSON-filen data.json. Datum är i formatet ISO 8601. Tilläggning av data i data.json filen är tänkt att antingen ske manuellt eller av andra verktyg i systemet. Förändringar i data.json filen ska presenteras direkt utan nödvändig omstart av webbservern. En frivillighet och alltså inte ett krav är att lägga till en administrativ sida för redigering av data.
+
+De sex funktioner som hanterar back-end ska följa en bestämd standard. Denna standard möjliggör att delsystemen kan bytas ut. Samtliga namn ska vara skrivna på engelska. Funktionerna kommer vara: load(filename), get\_project\_count(db), get\_project(db, id), search(db, sort\_by='start date', sort\_order='desc', techniques=None, search=None), get\_techniques(db), get\_technique\_stats(db).
+
+Projektet ska versionshanteras med git.
+
+Systemet ska testas av två personer som inte ingår i utvecklarteamet för projektet. Testpersonerna är tänkta att testa de funktioner projektet huvudsakligen tillhandahåller. Systemtesten och uppkomna fel ska dokumenteras och vara åtgärdade i den slutgiltiga versionen av projektet. Testerna ska skrivas in i systemdokumentationen.
+
+
+\section{Tidsplanering med grov uppskattning på tidsåtgång}
+Nedan följer en grov uppskattning av tidsåtgång för de olika momenten nödvändiga att behandla innan projektet kan anses slutfört. Tidsuppskattningen baseras på att gruppens medlemmar dels skummat igenom innehållet för respektive ämne och sedan efter diskussion kommit fram till en förväntad tidsåtgång för att bemästra sagt ämne. Uppskattningen anses vara grov då det utgås ifrån nuvarande kunskap idag (2020-09-09).
+
+\subsection{Schema/Deadlines}
+
+\begin{tabular}{|l|l|l|l|l|}
+  \hline
+  Vecka & Deadline Datum & Uppskattad & Beskrivning & Kunskap \\ [0.5ex]
+  \hline
+  37 & Torsdag 10/9 & 6h & Planeringsdokument & God\\
+  \hline
+  & Lördag 12/9 & 3h & Sätta emacs i python-mode & Vag\\
+  \hline
+  & Söndag 13/9 & 2h & Inkorporera Magit i Emacs & Vag\\
+  \hline
+  38 & Tisdag 15/9 & 3h & Bekantskap med Seleniumhq.org & Vag\\
+  \hline
+  & Torsdag 17/9 & 6h & Lofi-prototyp & God\\
+  \hline
+  & Torsdag 17/9 & 4h & Grundläggande Installations manual & God\\
+  \hline
+  39 & Torsdag 24/9 & 24h & Projektplan, Första utkast & Vag\\
+  \hline
+  & Torsdag 24/9 & 24h & 1:a Versionen gemensam installationsmanual & God\\
+  \hline
+  & Fredag 25/9 & 2h & Flask o Jinja2 Föreläsning & Vag\\
+  \hline
+  & Söndag 27/9 & 6h & Ha deploy:at första testhemsidan med flask & Vag\\
+  \hline
+  & Söndag 27/9 & 12h & Fatta Jinja2 & Vag\\
+  \hline
+  40 & Torsdag 1/10 & 1h & Bidra med icke-trivial förbättring git eller tester & God o inget\\
+  \hline
+  & Torsdag 1/10 & 1-2h & Korrigera eventuella brister installationsmanualen & okänt\\
+  \hline
+  & Torsdag 1/10 & 1-2h & Korrigera Brister, Projektplanen & Beror på\\
+  \hline
+  & Torsdag 1/10 & 24h & Datalagret Godkänt & Vag\\
+  \hline
+  42 & Torsdag 15/10 & - & Portfolion Publicerad & Vag\\
+  \hline
+  & Torsdag 15/10 & 3h & Systemdemonstration & Vag\\
+  \hline
+  & Torsdag 15/10 & 8h & 1:a Versionen Systemdokumentation & Vag\\
+  \hline
+  43 & Torsdag 22/10 & 8h & Testdokumentation inlämnad & Vag\\
+  \hline
+  & Torsdag 22/10 & 6h & Individuellt Reflektionsblad & Vag\\
+  \hline
+  & Torsdag 22/10 & 2-3h & Korrigerat event. brister i systemdokumentationen & Vag\\
+  \hline
+  \hline
+  Alla & & 20min/dag & Dokumentera Dagbok & God\\
+  \hline
+\end{tabular}
+
+\subsection{Tidsåtgång - Presentativ Del}
+\begin{tabular}{|c|l|}
+  \hline
+  5h & Statisk eller dynamisk sida med bilder på /\\
+  \hline
+  8h & Dynamisk sida som sorterar och listar projekten på /list\\
+  \hline
+  2h & Visar fullständig infosida för specifikt proj med id på /project/id\\
+  \hline
+  3h & Sammanställning av alla project baserat på använda tekniker på /techniques\\
+  \hline
+\end{tabular}
+
+\subsection{Tidsåtgång - Funktioner i datalagret}
+Nedan listas den specifika tidsåtgången för implementeringar av respektive funktion i datalagret.
+
+\begin{tabular}{|c|l|}
+  \hline
+  Tid & Funktion\\
+  \hline
+  2h & load\\
+  \hline
+  1h & get\_project\_count\\
+  \hline
+  1h & get\_project\\
+  \hline
+  3h & search\\
+  \hline
+  2h & get\_techniques\\
+  \hline
+  2h & get\_technique\_stats\\
+  \hline
+\end{tabular}
+
+\end{document}

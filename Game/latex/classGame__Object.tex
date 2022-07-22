@@ -1,0 +1,81 @@
+\hypertarget{classGame__Object}{}\doxysection{Game\+\_\+\+Object Class Reference}
+\label{classGame__Object}\index{Game\_Object@{Game\_Object}}
+
+
+{\ttfamily \#include $<$game\+\_\+object.\+h$>$}
+
+
+
+Inheritance diagram for Game\+\_\+\+Object\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGame__Object_ad9e5ce28296fa45fdbbccc3ea77a0f3d}{Game\+\_\+\+Object}} (sf\+::\+Float\+Rect \mbox{\hyperlink{classGame__Object_aec415041e15319d739dd6da04b95b811}{rect}})
+\item 
+virtual \mbox{\hyperlink{classGame__Object_a3a496b6becb732c9552adefe609bdcad}{$\sim$\+Game\+\_\+\+Object}} ()
+\item 
+virtual Update\+\_\+\+Result \mbox{\hyperlink{classGame__Object_aecd768b41e42c62b35a6464a4284a189}{update}} (sf\+::\+Time const \&time, \mbox{\hyperlink{classLevel}{Level}} \&level)=0
+\item 
+virtual void \mbox{\hyperlink{classGame__Object_aa7194a2784c7a851051a34dd500f4668}{draw}} (sf\+::\+Render\+Window \&window)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Float\+Rect \mbox{\hyperlink{classGame__Object_aec415041e15319d739dd6da04b95b811}{rect}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for every object a level contains. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGame__Object_ad9e5ce28296fa45fdbbccc3ea77a0f3d}\label{classGame__Object_ad9e5ce28296fa45fdbbccc3ea77a0f3d}} 
+\index{Game\_Object@{Game\_Object}!Game\_Object@{Game\_Object}}
+\index{Game\_Object@{Game\_Object}!Game\_Object@{Game\_Object}}
+\doxysubsubsection{\texorpdfstring{Game\_Object()}{Game\_Object()}}
+{\footnotesize\ttfamily Game\+\_\+\+Object\+::\+Game\+\_\+\+Object (\begin{DoxyParamCaption}\item[{sf\+::\+Float\+Rect}]{rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Create an game object with a bounding rectangle. \mbox{\Hypertarget{classGame__Object_a3a496b6becb732c9552adefe609bdcad}\label{classGame__Object_a3a496b6becb732c9552adefe609bdcad}} 
+\index{Game\_Object@{Game\_Object}!````~Game\_Object@{$\sim$Game\_Object}}
+\index{````~Game\_Object@{$\sim$Game\_Object}!Game\_Object@{Game\_Object}}
+\doxysubsubsection{\texorpdfstring{$\sim$Game\_Object()}{~Game\_Object()}}
+{\footnotesize\ttfamily virtual Game\+\_\+\+Object\+::$\sim$\+Game\+\_\+\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Virtual destructor. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGame__Object_aa7194a2784c7a851051a34dd500f4668}\label{classGame__Object_aa7194a2784c7a851051a34dd500f4668}} 
+\index{Game\_Object@{Game\_Object}!draw@{draw}}
+\index{draw@{draw}!Game\_Object@{Game\_Object}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily virtual void Game\+\_\+\+Object\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Draw an object to the screen. 
+
+Implemented in \mbox{\hyperlink{classPlayer_a807c1f46676805c16b0a2a5838c5822a}{Player}}, \mbox{\hyperlink{classTextured__Object_a999c0af138b38c7f60817e96cc235a62}{Textured\+\_\+\+Object}}, \mbox{\hyperlink{classMoving__Object_aeae817d621f35457b52c99823db93b50}{Moving\+\_\+\+Object}}, and \mbox{\hyperlink{classAnimated__Object_afee9805d75a92aa4ae47c2aeb278a6ab}{Animated\+\_\+\+Object}}.
+
+\mbox{\Hypertarget{classGame__Object_aecd768b41e42c62b35a6464a4284a189}\label{classGame__Object_aecd768b41e42c62b35a6464a4284a189}} 
+\index{Game\_Object@{Game\_Object}!update@{update}}
+\index{update@{update}!Game\_Object@{Game\_Object}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual Update\+\_\+\+Result Game\+\_\+\+Object\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time const \&}]{time,  }\item[{\mbox{\hyperlink{classLevel}{Level}} \&}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Update the state of an object based on time. Returns false if the object is to be deleted. 
+
+Implemented in \mbox{\hyperlink{classPlayer_a0b419c3b6a364bea158cbab18de4685d}{Player}}, \mbox{\hyperlink{classTextured__Object_a6c84fc327c944c7882c1f5a27756bfdc}{Textured\+\_\+\+Object}}, \mbox{\hyperlink{classEnemy_af625bf98552227f13c63820da1ab3a03}{Enemy}}, \mbox{\hyperlink{classLava_a074554c583542a6d1e7b31c0ea013296}{Lava}}, \mbox{\hyperlink{classMoving__Object_a6dfe10727edbd1c603accb3b6e81ace2}{Moving\+\_\+\+Object}}, \mbox{\hyperlink{classAnimated__Object_aa882ab16154f28a2c1e02ad17e468618}{Animated\+\_\+\+Object}}, \mbox{\hyperlink{classProjectile_adfea5dd7ee5329cb32f1d4bf6a3e532f}{Projectile}}, \mbox{\hyperlink{classWalking__Enemy_a125841d44424bdedff2b7e36c9a28e64}{Walking\+\_\+\+Enemy}}, \mbox{\hyperlink{classFlying__Enemy_a5f1131df8e0718f73c7ba4461344ec53}{Flying\+\_\+\+Enemy}}, and \mbox{\hyperlink{classJumping__Enemy_af7b425dbaa59580a450a31b934e765b2}{Jumping\+\_\+\+Enemy}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classGame__Object_aec415041e15319d739dd6da04b95b811}\label{classGame__Object_aec415041e15319d739dd6da04b95b811}} 
+\index{Game\_Object@{Game\_Object}!rect@{rect}}
+\index{rect@{rect}!Game\_Object@{Game\_Object}}
+\doxysubsubsection{\texorpdfstring{rect}{rect}}
+{\footnotesize\ttfamily sf\+::\+Float\+Rect Game\+\_\+\+Object\+::rect}
+
+Bounding rectangle for an object. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+game\+\_\+object.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,93 @@
+\hypertarget{classGame__State}{}\doxysection{Game\+\_\+\+State Class Reference}
+\label{classGame__State}\index{Game\_State@{Game\_State}}
+
+
+{\ttfamily \#include $<$game\+\_\+state.\+h$>$}
+
+
+
+Inheritance diagram for Game\+\_\+\+State\+:
+% FIG 0
+
+
+Collaboration diagram for Game\+\_\+\+State\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGame__State_ab09836315361fe3bc8d14478004b0633}{Game\+\_\+\+State}} (std\+::string const \&level\+\_\+name)
+\item 
+\mbox{\hyperlink{classGame__State_ae99e39888022a4497a56912a3325b65f}{$\sim$\+Game\+\_\+\+State}} ()=default
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classState}{State}} $>$ \mbox{\hyperlink{classGame__State_a4c0719d418da97943c2b4be867f3c7a5}{take\+\_\+user\+\_\+input}} () override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classState}{State}} $>$ \mbox{\hyperlink{classGame__State_a8f2f3114c1a614775850401f1ead8112}{update}} (sf\+::\+Time time) override
+\item 
+void \mbox{\hyperlink{classGame__State_a9e12bfa3dfd1aec48f7d74470a42e72e}{draw}} (sf\+::\+Render\+Window \&window) override
+\item 
+std\+::string \mbox{\hyperlink{classGame__State_a11c258c88ad56f904b2f64800e0a0653}{get\+\_\+level\+\_\+name}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A state class that represents the program being in-\/game. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGame__State_ab09836315361fe3bc8d14478004b0633}\label{classGame__State_ab09836315361fe3bc8d14478004b0633}} 
+\index{Game\_State@{Game\_State}!Game\_State@{Game\_State}}
+\index{Game\_State@{Game\_State}!Game\_State@{Game\_State}}
+\doxysubsubsection{\texorpdfstring{Game\_State()}{Game\_State()}}
+{\footnotesize\ttfamily Game\+\_\+\+State\+::\+Game\+\_\+\+State (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{level\+\_\+name }\end{DoxyParamCaption})}
+
+Constructor that loads a level. \mbox{\Hypertarget{classGame__State_ae99e39888022a4497a56912a3325b65f}\label{classGame__State_ae99e39888022a4497a56912a3325b65f}} 
+\index{Game\_State@{Game\_State}!````~Game\_State@{$\sim$Game\_State}}
+\index{````~Game\_State@{$\sim$Game\_State}!Game\_State@{Game\_State}}
+\doxysubsubsection{\texorpdfstring{$\sim$Game\_State()}{~Game\_State()}}
+{\footnotesize\ttfamily Game\+\_\+\+State\+::$\sim$\+Game\+\_\+\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Default destructor. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGame__State_a9e12bfa3dfd1aec48f7d74470a42e72e}\label{classGame__State_a9e12bfa3dfd1aec48f7d74470a42e72e}} 
+\index{Game\_State@{Game\_State}!draw@{draw}}
+\index{draw@{draw}!Game\_State@{Game\_State}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Game\+\_\+\+State\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called to draw a \mbox{\hyperlink{classGame__State}{Game\+\_\+\+State}} to the screen. 
+
+Implements \mbox{\hyperlink{classState_a8d027a56eb39e427e17cc03ce82e5d77}{State}}.
+
+\mbox{\Hypertarget{classGame__State_a11c258c88ad56f904b2f64800e0a0653}\label{classGame__State_a11c258c88ad56f904b2f64800e0a0653}} 
+\index{Game\_State@{Game\_State}!get\_level\_name@{get\_level\_name}}
+\index{get\_level\_name@{get\_level\_name}!Game\_State@{Game\_State}}
+\doxysubsubsection{\texorpdfstring{get\_level\_name()}{get\_level\_name()}}
+{\footnotesize\ttfamily std\+::string Game\+\_\+\+State\+::get\+\_\+level\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the name of the level in a \mbox{\hyperlink{classGame__State}{Game\+\_\+\+State}}. \mbox{\Hypertarget{classGame__State_a4c0719d418da97943c2b4be867f3c7a5}\label{classGame__State_a4c0719d418da97943c2b4be867f3c7a5}} 
+\index{Game\_State@{Game\_State}!take\_user\_input@{take\_user\_input}}
+\index{take\_user\_input@{take\_user\_input}!Game\_State@{Game\_State}}
+\doxysubsubsection{\texorpdfstring{take\_user\_input()}{take\_user\_input()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classState}{State}} $>$ Game\+\_\+\+State\+::take\+\_\+user\+\_\+input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Handles user keyboard-\/ and button presses. May result in a state change between \mbox{\hyperlink{classGame__State}{Game\+\_\+\+State}} and \mbox{\hyperlink{classMenu__State}{Menu\+\_\+\+State}}. 
+
+Implements \mbox{\hyperlink{classState_ac57cefb8d33356c82a9e0b0c4d448d73}{State}}.
+
+\mbox{\Hypertarget{classGame__State_a8f2f3114c1a614775850401f1ead8112}\label{classGame__State_a8f2f3114c1a614775850401f1ead8112}} 
+\index{Game\_State@{Game\_State}!update@{update}}
+\index{update@{update}!Game\_State@{Game\_State}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classState}{State}} $>$ Game\+\_\+\+State\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called to update a \mbox{\hyperlink{classGame__State}{Game\+\_\+\+State}}. 
+
+Implements \mbox{\hyperlink{classState_a40b6d9b13c991f9292f1831f108a11e7}{State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+game\+\_\+state.\+h\item 
+game\+\_\+state.\+cpp\end{DoxyCompactItemize}

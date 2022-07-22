@@ -1,0 +1,53 @@
+\hypertarget{classLava}{}\doxysection{Lava Class Reference}
+\label{classLava}\index{Lava@{Lava}}
+
+
+{\ttfamily \#include $<$lava.\+h$>$}
+
+
+
+Inheritance diagram for Lava\+:
+% FIG 0
+
+
+Collaboration diagram for Lava\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLava_a96df9841ae021da8d2810fae701417e1}{Lava}} (sf\+::\+Float\+Rect \&\mbox{\hyperlink{classGame__Object_aec415041e15319d739dd6da04b95b811}{rect}}, sf\+::\+Sprite \&\mbox{\hyperlink{classTextured__Object_a53206fbdf758371354849320eb86665b}{sprite}}, bool animated)
+\item 
+Update\+\_\+\+Result \mbox{\hyperlink{classLava_a074554c583542a6d1e7b31c0ea013296}{update}} (sf\+::\+Time const \&time, \mbox{\hyperlink{classLevel}{Level}} \&level) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Animated lava flow that follows the player character up through a level. Kills the player on touch. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLava_a96df9841ae021da8d2810fae701417e1}\label{classLava_a96df9841ae021da8d2810fae701417e1}} 
+\index{Lava@{Lava}!Lava@{Lava}}
+\index{Lava@{Lava}!Lava@{Lava}}
+\doxysubsubsection{\texorpdfstring{Lava()}{Lava()}}
+{\footnotesize\ttfamily Lava\+::\+Lava (\begin{DoxyParamCaption}\item[{sf\+::\+Float\+Rect \&}]{rect,  }\item[{sf\+::\+Sprite \&}]{sprite,  }\item[{bool}]{animated }\end{DoxyParamCaption})}
+
+Create a lava object with a bounding rectangle, a textured shape, and a boolean that determines if the lava is animated. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLava_a074554c583542a6d1e7b31c0ea013296}\label{classLava_a074554c583542a6d1e7b31c0ea013296}} 
+\index{Lava@{Lava}!update@{update}}
+\index{update@{update}!Lava@{Lava}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily Update\+\_\+\+Result Lava\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time const \&}]{time,  }\item[{\mbox{\hyperlink{classLevel}{Level}} \&}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Raise the lava level, if it is active. 
+
+Reimplemented from \mbox{\hyperlink{classAnimated__Object_aa882ab16154f28a2c1e02ad17e468618}{Animated\+\_\+\+Object}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lava.\+h\item 
+lava.\+cpp\end{DoxyCompactItemize}

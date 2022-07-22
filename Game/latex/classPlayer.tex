@@ -1,0 +1,65 @@
+\hypertarget{classPlayer}{}\doxysection{Player Class Reference}
+\label{classPlayer}\index{Player@{Player}}
+
+
+{\ttfamily \#include $<$player.\+h$>$}
+
+
+
+Inheritance diagram for Player\+:
+% FIG 0
+
+
+Collaboration diagram for Player\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPlayer_a8b6130514217267213c43ef9f1caf8c3}{Player}} (sf\+::\+Float\+Rect \&\mbox{\hyperlink{classGame__Object_aec415041e15319d739dd6da04b95b811}{rect}}, sf\+::\+Sprite \&\mbox{\hyperlink{classTextured__Object_a53206fbdf758371354849320eb86665b}{sprite}})
+\item 
+Update\+\_\+\+Result \mbox{\hyperlink{classPlayer_a0b419c3b6a364bea158cbab18de4685d}{update}} (sf\+::\+Time const \&time, \mbox{\hyperlink{classLevel}{Level}} \&level) override
+\item 
+void \mbox{\hyperlink{classPlayer_a807c1f46676805c16b0a2a5838c5822a}{draw}} (sf\+::\+Render\+Window \&window) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The playable character of the game. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPlayer_a8b6130514217267213c43ef9f1caf8c3}\label{classPlayer_a8b6130514217267213c43ef9f1caf8c3}} 
+\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{sf\+::\+Float\+Rect \&}]{rect,  }\item[{sf\+::\+Sprite \&}]{sprite }\end{DoxyParamCaption})}
+
+Create a player object with a bounding rectangle, and a textured shape. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPlayer_a807c1f46676805c16b0a2a5838c5822a}\label{classPlayer_a807c1f46676805c16b0a2a5838c5822a}} 
+\index{Player@{Player}!draw@{draw}}
+\index{draw@{draw}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Player\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Update window view and player health bar positions, then animate \& draw the player. 
+
+Reimplemented from \mbox{\hyperlink{classMoving__Object_aeae817d621f35457b52c99823db93b50}{Moving\+\_\+\+Object}}.
+
+\mbox{\Hypertarget{classPlayer_a0b419c3b6a364bea158cbab18de4685d}\label{classPlayer_a0b419c3b6a364bea158cbab18de4685d}} 
+\index{Player@{Player}!update@{update}}
+\index{update@{update}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily Update\+\_\+\+Result Player\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time const \&}]{time,  }\item[{\mbox{\hyperlink{classLevel}{Level}} \&}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Update player based on keyboard input, apply gravity, and then move the player and resolve collisions. 
+
+Reimplemented from \mbox{\hyperlink{classMoving__Object_a6dfe10727edbd1c603accb3b6e81ace2}{Moving\+\_\+\+Object}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+player.\+h\item 
+player.\+cpp\end{DoxyCompactItemize}
